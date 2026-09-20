@@ -47,7 +47,7 @@
     body {
       background-color: var(--bg-cream);
       color: var(--text-main);
-      font-family: 'Cormorant Garamond', 'Noto Serif TC', 'Songti TC', serif;
+      font-family: 'Noto Serif TC', 'Cormorant Garamond', 'Songti TC', serif;
       line-height: 1.85;
       letter-spacing: 0.03em;
       -webkit-font-smoothing: antialiased;
@@ -127,12 +127,12 @@
       color: var(--morandi-gold);
     }
 
-    /* 首頁全螢幕婚紗封面 (純粹文字排版，不放日期，徹底避免擋臉) */
+    /* 首頁全螢幕婚紗封面 */
     .hero {
       position: relative;
       height: 92vh;
       min-height: 580px;
-      background: url('https://i.postimg.cc/pLfFj87d/JUN00172-sha-yu.jpg') center 22% / cover no-repeat;
+      background: url('https://i.postimg.cc/WzvqbyhT/JUN00195-Korean-Edited.jpg') center 22% / cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -191,7 +191,7 @@
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
     }
 
-    /* 倒數計時區塊 (日期已移至此處) */
+    /* 倒數計時區塊 */
     .countdown-section {
       position: relative;
       z-index: 10;
@@ -371,55 +371,6 @@
       width: 36px;
       height: 1px;
       background-color: var(--morandi-gold);
-    }
-
-    .story-card {
-      background: #ffffff;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
-      padding: 3.2rem 2.8rem;
-      text-align: center;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .story-photo-wrapper {
-      max-width: 440px;
-      margin: 0 auto 2.2rem;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-card);
-      border: 1px solid var(--border-accent);
-      background-color: #faf7f2;
-    }
-
-    .story-photo {
-      width: 100%;
-      height: auto;
-      max-height: 520px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .story-photo:hover {
-      transform: scale(1.02);
-    }
-
-    .story-quote {
-      font-size: 1.45rem;
-      color: var(--morandi-gold);
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      line-height: 1.4;
-    }
-
-    .story-body {
-      color: var(--text-muted);
-      font-size: 1.02rem;
-      line-height: 2.1;
-      max-width: 660px;
-      margin: 0 auto;
     }
 
     .detail-card {
@@ -615,75 +566,6 @@
       padding-left: 1.1rem;
     }
 
-    .dresscode-card {
-      background: #ffffff;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
-      padding: 3.2rem 2rem;
-      text-align: center;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .dresscode-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-    }
-
-    .palette-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      max-width: 680px;
-      margin: 0 auto 2.2rem;
-    }
-
-    .palette-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .color-swatch {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      margin-bottom: 0.9rem;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      border: 2px solid #ffffff;
-      transition: transform 0.3s ease;
-    }
-
-    .palette-item:hover .color-swatch {
-      transform: scale(1.08);
-    }
-
-    .swatch-gold { background: #d4a373; }
-    .swatch-sage { background: #8da399; }
-    .swatch-oatmeal { background: #e6ded3; }
-    .swatch-caramel { background: #c59b79; }
-
-    .color-name-zh {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 0.2rem;
-    }
-
-    .color-name-en {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      color: var(--text-light);
-      text-transform: uppercase;
-    }
-
-    .dresscode-note {
-      font-size: 0.95rem;
-      color: var(--morandi-sage-dark);
-      font-style: italic;
-    }
-
     .rsvp-wrapper {
       background: #ffffff;
       border-radius: var(--radius-lg);
@@ -750,50 +632,6 @@
       background-size: 1em;
       cursor: pointer;
       font-family: 'Noto Serif TC', serif;
-    }
-
-    .form-label .en {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      color: var(--morandi-sage);
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-
-    .form-label .req {
-      color: #c97d60;
-      font-size: 0.85rem;
-      margin-left: 2px;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 0.9rem 1.2rem;
-      font-family: inherit;
-      font-size: 0.96rem;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-sm);
-      background: #fafaf9;
-      color: var(--text-main);
-      transition: all 0.3s ease;
-      outline: none;
-    }
-
-    .form-control:focus {
-      border-color: var(--morandi-gold);
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.16);
-    }
-
-    select.form-control {
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4a373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right 1.1rem center;
-      background-size: 1em;
-      cursor: pointer;
     }
 
     #conditional-dining-block {
@@ -876,6 +714,7 @@
       cursor: pointer;
       letter-spacing: 0.1em;
       transition: all 0.3s ease;
+      font-family: 'Montserrat', 'Noto Serif TC', sans-serif;
     }
 
     .btn-reset-view:hover {
@@ -913,51 +752,6 @@
     @keyframes fadeInSlide {
       from { opacity: 0; transform: translateY(-8px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* 懸浮音樂播放按鈕（莫蘭迪暖金微光風格） */
-    .music-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-accent);
-      color: var(--morandi-gold-dark);
-      box-shadow: 0 6px 20px rgba(212, 163, 115, 0.28);
-      cursor: pointer;
-      z-index: 1001;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      outline: none;
-    }
-
-    .music-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 24px rgba(212, 163, 115, 0.4);
-    }
-
-    .music-btn .music-icon {
-      font-size: 1.15rem;
-      line-height: 1;
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-
-    /* 播放中如同黑膠唱片緩慢優雅旋轉 */
-    .music-btn.playing .music-icon {
-      animation: spinVinyl 6s linear infinite;
-    }
-
-    @keyframes spinVinyl {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
     }
 
     @media (max-width: 768px) {
@@ -1010,7 +804,7 @@
         font-size: 0.88rem;
         line-height: 1.95;
       }
-      .detail-card, .rsvp-wrapper, .dresscode-card {
+      .detail-card, .rsvp-wrapper {
         padding: 2.4rem 1.4rem;
       }
       .detail-venue-name {
@@ -1033,7 +827,7 @@
     </ul>
   </nav>
 
-  <!-- 首頁全螢幕封面：保留唯美婚紗照片，移除日期，字體集中在底部以完整露出新人的臉龐 -->
+  <!-- 首頁全螢幕封面 -->
   <header class="hero" id="home">
     <div class="hero-container">
       <div class="hero-quote-en">Nice to meet you my soulmate</div>
@@ -1042,7 +836,7 @@
     </div>
   </header>
 
-  <!-- 倒數計時區塊：日期已移至此處，搭配白色微光卡片與誓詞短詩 (錨點 #about) -->
+  <!-- 倒數計時區塊 (日期已移至此處) -->
   <div class="countdown-section" id="about">
     <div class="countdown-date-badge">2027 . 01 . 10</div>
     <div class="countdown-header-title">The Countdown</div>
@@ -1085,7 +879,7 @@
       </div>
     </div>
 
-    <!-- 典雅誓詞卡片：不放照片，直接呈現你們的暖心文字 -->
+    <!-- 典雅誓詞卡片 -->
     <div class="countdown-poem-card">
       <div class="quote-symbol">“</div>
       <div class="countdown-poem">
@@ -1117,7 +911,7 @@
 
       <div class="detail-divider"></div>
 
-      <!-- 飯店與廳房資訊 (套用 no-wrap 保護，3F 在地址後方) -->
+      <!-- 飯店與廳房資訊 (3F在地址後方) -->
       <div class="detail-venue-name no-wrap">台北市大倉久和大飯店</div>
       <div class="detail-hall no-wrap">久和廳</div>
       <div class="detail-address no-wrap">台北市中山區南京東路一段9號 3F</div>
@@ -1295,7 +1089,7 @@
         <button type="submit" class="btn-submit" id="btn_submit_text">確認送出 SUBMIT</button>
       </form>
 
-      <!-- 提交成功訊息卡片 (參考範例設計) -->
+      <!-- 提交成功訊息卡片 -->
       <div class="submission-success" id="submission-success-card">
         <div class="heart-icon">❦</div>
         <h3>回函已送出</h3>
@@ -1313,55 +1107,53 @@
     <div class="footer-desc">© 2027 NICE TO MEET YOU MY SOULMATE. ALL RIGHTS RESERVED.</div>
   </footer>
 
-  <!-- 背景音樂音訊與懸浮按鈕 (指定歌曲：The Blessing) -->
-  <audio id="weddingAudio" loop preload="auto">
-    <!-- 建議將下載好的鋼琴純音樂或人聲版音檔命名為 the-blessing.mp3，與 index.html 置於同目錄 -->
-    <source src="the-blessing.mp3" type="audio/mpeg">
-  </audio>
-
-  <button type="button" class="music-btn" id="musicToggleBtn" aria-label="播放背景音樂" onclick="toggleAudioPlayback()">
-    <span class="music-icon" id="musicToggleIcon">♪</span>
-  </button>
-
   <script>
-    /* ========== 0. 背景音樂控制邏輯 ========== */
-    const audioEl = document.getElementById('weddingAudio');
-    const musicBtn = document.getElementById('musicToggleBtn');
-    const musicIcon = document.getElementById('musicToggleIcon');
-    let hasAttemptedAutoPlay = false;
-
-    function toggleAudioPlayback() {
-      if (!audioEl) return;
-      if (audioEl.paused) {
-        audioEl.play().then(() => {
-          musicBtn.classList.add('playing');
-          musicIcon.textContent = '♪';
-        }).catch(err => console.log('音訊播放提示:', err));
-      } else {
-        audioEl.pause();
-        musicBtn.classList.remove('playing');
-        musicIcon.textContent = '❙❙';
-      }
-    }
-
-    // 當訪客初次點擊或觸控網頁時，溫和嘗試啟動音樂（順應瀏覽器隱私安全策略）
-    function tryAutoPlayOnFirstInteraction() {
-      if (!hasAttemptedAutoPlay && audioEl) {
-        hasAttemptedAutoPlay = true;
-        audioEl.play().then(() => {
-          musicBtn.classList.add('playing');
-          musicIcon.textContent = '♪';
-        }).catch(() => {
-          // 若被瀏覽器嚴格阻擋，按鈕保持待點擊狀態
-        });
-        document.removeEventListener('click', tryAutoPlayOnFirstInteraction);
-        document.removeEventListener('touchstart', tryAutoPlayOnFirstInteraction);
-      }
-    }
-    document.addEventListener('click', tryAutoPlayOnFirstInteraction, { once: true });
-    document.addEventListener('touchstart', tryAutoPlayOnFirstInteraction, { once: true });
-
     /* 1. 倒數計時器邏輯 */
+    const targetDate = new Date('2027-01-10T12:00:00+08:00').getTime();
+
+    function renderCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        document.getElementById('timer-days').textContent = '00';
+        document.getElementById('timer-hours').textContent = '00';
+        document.getElementById('timer-minutes').textContent = '00';
+        document.getElementById('timer-seconds').textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('timer-days').textContent = String(days);
+      document.getElementById('timer-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('timer-minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('timer-seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(renderCountdown, 1000);
+    renderCountdown();
+
+    /* 2. 交通資訊摺疊式面板 (Accordion) */
+    function toggleTransportation() {
+      const panel = document.getElementById('accordion-panel');
+      const arrow = document.getElementById('accordion-arrow');
+
+      if (panel.classList.contains('open')) {
+        panel.style.maxHeight = null;
+        panel.classList.remove('open');
+        arrow.textContent = '+';
+      } else {
+        panel.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 32 + 'px';
+        arrow.textContent = '−';
+      }
+    }
+
+    /* 3. 智能表單邏輯 */
     function evaluateDiningRequirementsVisibility() {
       const guestsInput = document.getElementById('field_guests');
       const conditionalBlock = document.getElementById('conditional-dining-block');
@@ -1388,7 +1180,7 @@
       evaluateDiningRequirementsVisibility();
     }
 
-    /* ========== 4. 隱藏式 Iframe 無跳轉提交技術 ========== */
+    /* 4. 隱藏式 Iframe 無跳轉提交 */
     let formSubmitted = false;
 
     function handleFormSubmit() {
