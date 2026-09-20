@@ -1,1 +1,1432 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Yen &amp; Angie | Wedding Invitation</title>
 
+  <!-- Google Fonts: Cormorant Garamond & Noto Serif TC & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --morandi-gold: #d4a373;
+      --morandi-gold-dark: #b88656;
+      --morandi-gold-light: #f4ece2;
+      --morandi-sage: #8da399;
+      --morandi-sage-dark: #6e847a;
+      --morandi-sage-bg: #f2f5f4;
+      --bg-cream: #faf8f5;
+      --bg-card: #ffffff;
+      --text-main: #332f2c;
+      --text-muted: #736c65;
+      --text-light: #9d968f;
+      --border-accent: rgba(212, 163, 115, 0.3);
+      --border-subtle: rgba(212, 163, 115, 0.18);
+      --border-light: #ece6de;
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.035);
+      --shadow-card: 0 16px 40px rgba(212, 163, 115, 0.12), 0 4px 12px rgba(0, 0, 0, 0.02);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      font-family: 'Cormorant Garamond', 'Noto Serif TC', 'Songti TC', serif;
+      line-height: 1.85;
+      letter-spacing: 0.03em;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* 手機版防斷行專用 class */
+    .no-wrap {
+      white-space: nowrap !important;
+      display: inline-block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 6%;
+      background: rgba(250, 248, 245, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    nav .nav-brand {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--text-main);
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.2rem;
+    }
+
+    nav ul li a {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.25;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a .nav-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--morandi-sage);
+      text-transform: uppercase;
+      margin-top: 2px;
+      font-weight: 400;
+    }
+
+    nav ul li a:hover {
+      color: var(--morandi-gold);
+    }
+    nav ul li a:hover .nav-sub {
+      color: var(--morandi-gold);
+    }
+
+    /* 首頁全螢幕婚紗封面 (純粹文字排版，不放日期，徹底避免擋臉) */
+    .hero {
+      position: relative;
+      height: 92vh;
+      min-height: 580px;
+      background: url('https://i.postimg.cc/pLfFj87d/JUN00172-sha-yu.jpg') center 22% / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      padding: 0 1.5rem 4.5rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg, 
+        rgba(26, 24, 22, 0.15) 0%, 
+        rgba(26, 24, 22, 0.25) 45%, 
+        rgba(26, 24, 22, 0.72) 100%
+      );
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .hero-quote-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.22em;
+      font-style: italic;
+      color: #fdfaf6;
+      margin-bottom: 0.6rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+      color: #ffffff;
+      font-family: 'Cormorant Garamond', serif;
+      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-quote-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.2em;
+      font-weight: 300;
+      color: #f5f1eb;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    /* 倒數計時區塊 (日期已移至此處) */
+    .countdown-section {
+      position: relative;
+      z-index: 10;
+      padding: 3.5rem 1.5rem 4.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* 倒數區頂部：婚禮日期標章 */
+    .countdown-date-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: var(--morandi-gold-dark);
+      background: #ffffff;
+      padding: 0.38rem 1.7rem;
+      border-radius: 30px;
+      box-shadow: 0 6px 20px rgba(212, 163, 115, 0.14);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 1.2rem;
+    }
+
+    .countdown-date-badge::before,
+    .countdown-date-badge::after {
+      content: '✦';
+      font-size: 0.75rem;
+      color: var(--morandi-sage);
+    }
+
+    .countdown-header-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      color: var(--morandi-sage);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .countdown-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      max-width: 780px;
+      width: 100%;
+    }
+
+    .countdown-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-card);
+      padding: 1.3rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 42px rgba(212, 163, 115, 0.2);
+    }
+
+    .countdown-num {
+      font-size: 2.3rem;
+      font-weight: 600;
+      color: var(--morandi-gold);
+      line-height: 1;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.02em;
+    }
+
+    .countdown-line-divider {
+      width: 1px;
+      height: 28px;
+      background: linear-gradient(180deg, transparent, rgba(212, 163, 115, 0.5), transparent);
+      margin: 0 0.4rem;
+    }
+
+    .countdown-unit {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.2;
+    }
+
+    /* 倒數計時下方的專屬誓約與邀請短詩 */
+    .countdown-poem-card {
+      margin-top: 2.5rem;
+      max-width: 620px;
+      text-align: center;
+      background: #ffffff;
+      padding: 2rem 2rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .countdown-poem-card .quote-symbol {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--morandi-gold);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .countdown-poem {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 2.05;
+      letter-spacing: 0.04em;
+    }
+
+    .countdown-poem strong {
+      font-size: 1rem;
+      color: var(--morandi-gold-dark);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    section {
+      padding: 5.5rem 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header .sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--morandi-sage);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.3rem;
+      font-weight: 400;
+      color: var(--text-main);
+      letter-spacing: 0.12em;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 1px;
+      background-color: var(--morandi-gold);
+    }
+
+    .story-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 3.2rem 2.8rem;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .story-photo-wrapper {
+      max-width: 440px;
+      margin: 0 auto 2.2rem;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-accent);
+      background-color: #faf7f2;
+    }
+
+    .story-photo {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .story-photo:hover {
+      transform: scale(1.02);
+    }
+
+    .story-quote {
+      font-size: 1.45rem;
+      color: var(--morandi-gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .story-body {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      line-height: 2.1;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .detail-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 3.6rem 2.6rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+      text-align: center;
+      position: relative;
+    }
+
+    .detail-card::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      border: 1px dashed var(--border-subtle);
+      border-radius: 14px;
+      pointer-events: none;
+    }
+
+    .detail-badge {
+      display: inline-block;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--morandi-gold-dark);
+      background: var(--morandi-gold-light);
+      padding: 0.35rem 1.4rem;
+      border-radius: 30px;
+      margin-bottom: 1.4rem;
+    }
+
+    .detail-event-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.08em;
+    }
+
+    .detail-event-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--morandi-gold);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-date {
+      font-family: 'Noto Serif TC', 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--morandi-gold-dark);
+      letter-spacing: 0.1em;
+      line-height: 1.2;
+    }
+
+    .detail-time {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.12rem;
+      color: var(--text-main);
+      font-weight: 500;
+      margin-top: 0.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .detail-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--morandi-sage);
+      margin: 0 auto 2rem;
+      opacity: 0.6;
+    }
+
+    .detail-venue-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .detail-hall {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.2rem;
+      color: var(--morandi-gold);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .detail-address {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .accordion {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #ffffff;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: rgba(141, 163, 153, 0.08);
+      padding: 1.15rem 1.6rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text-main);
+      transition: background 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background: rgba(141, 163, 153, 0.15);
+    }
+
+    .accordion-header .acc-title-en {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--morandi-sage);
+      margin-left: 0.6rem;
+      font-weight: 400;
+    }
+
+    .accordion-icon {
+      font-size: 1.3rem;
+      color: var(--morandi-sage);
+      font-weight: 300;
+      transition: transform 0.35s ease;
+      line-height: 1;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+      background: #ffffff;
+      padding: 0 1.6rem;
+    }
+
+    .accordion-content.open {
+      padding: 1.6rem 1.6rem 1.8rem;
+    }
+
+    .trans-block {
+      margin-bottom: 1.3rem;
+    }
+
+    .trans-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .trans-tag {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--morandi-gold-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .trans-tag::before {
+      content: '◆';
+      font-size: 0.65rem;
+      color: var(--morandi-sage);
+    }
+
+    .trans-detail {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      padding-left: 1.1rem;
+    }
+
+    .dresscode-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 3.2rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .dresscode-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 680px;
+      margin: 0 auto 2.2rem;
+    }
+
+    .palette-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .color-swatch {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin-bottom: 0.9rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border: 2px solid #ffffff;
+      transition: transform 0.3s ease;
+    }
+
+    .palette-item:hover .color-swatch {
+      transform: scale(1.08);
+    }
+
+    .swatch-gold { background: #d4a373; }
+    .swatch-sage { background: #8da399; }
+    .swatch-oatmeal { background: #e6ded3; }
+    .swatch-caramel { background: #c59b79; }
+
+    .color-name-zh {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.2rem;
+    }
+
+    .color-name-en {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--text-light);
+      text-transform: uppercase;
+    }
+
+    .dresscode-note {
+      font-size: 0.95rem;
+      color: var(--morandi-sage-dark);
+      font-style: italic;
+    }
+
+    .rsvp-wrapper {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2.8rem;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+
+    .form-label {
+      font-family: 'Noto Serif TC', serif;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .form-label .en {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--morandi-sage);
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .form-label .req {
+      color: #c97d60;
+      font-size: 0.85rem;
+      margin-left: 2px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.96rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      background: #fafaf9;
+      color: var(--text-main);
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--morandi-gold);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.16);
+    }
+
+    select.form-control {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4a373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1.1rem center;
+      background-size: 1em;
+      cursor: pointer;
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .form-label .en {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--morandi-sage);
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .form-label .req {
+      color: #c97d60;
+      font-size: 0.85rem;
+      margin-left: 2px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      font-family: inherit;
+      font-size: 0.96rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      background: #fafaf9;
+      color: var(--text-main);
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--morandi-gold);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.16);
+    }
+
+    select.form-control {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4a373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1.1rem center;
+      background-size: 1em;
+      cursor: pointer;
+    }
+
+    #conditional-dining-block {
+      display: none;
+      background: var(--morandi-sage-bg);
+      border-left: 3px solid var(--morandi-sage);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.4rem 1.4rem 0.4rem 1.4rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.8rem;
+      animation: fadeInSlide 0.35s ease-out;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--morandi-gold);
+      color: #ffffff;
+      border: none;
+      padding: 1.05rem 2rem;
+      font-size: 1.02rem;
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(212, 163, 115, 0.3);
+      transition: all 0.3s ease;
+      margin-top: 0.8rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--morandi-gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(212, 163, 115, 0.4);
+    }
+
+    .submission-success {
+      display: none;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+      animation: fadeIn 0.6s ease;
+    }
+
+    .submission-success .heart-icon {
+      font-size: 2.6rem;
+      color: var(--morandi-gold);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .submission-success h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2rem;
+      color: var(--text-main);
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    .submission-success p {
+      font-family: 'Noto Serif TC', serif;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-reset-view {
+      display: inline-block;
+      padding: 0.6rem 1.6rem;
+      border: 1px solid var(--morandi-gold);
+      color: var(--morandi-gold-dark);
+      background: transparent;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease;
+    }
+
+    .btn-reset-view:hover {
+      background: var(--morandi-gold);
+      color: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 1.5rem 3.5rem;
+      border-top: 1px solid var(--border-light);
+      background: #faf8f5;
+    }
+
+    .footer-names {
+      font-size: 1.65rem;
+      letter-spacing: 0.2em;
+      color: var(--morandi-gold);
+      font-family: 'Cormorant Garamond', serif;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      color: var(--text-light);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 懸浮音樂播放按鈕（莫蘭迪暖金微光風格） */
+    .music-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-accent);
+      color: var(--morandi-gold-dark);
+      box-shadow: 0 6px 20px rgba(212, 163, 115, 0.28);
+      cursor: pointer;
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      outline: none;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 24px rgba(212, 163, 115, 0.4);
+    }
+
+    .music-btn .music-icon {
+      font-size: 1.15rem;
+      line-height: 1;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    /* 播放中如同黑膠唱片緩慢優雅旋轉 */
+    .music-btn.playing .music-icon {
+      animation: spinVinyl 6s linear infinite;
+    }
+
+    @keyframes spinVinyl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 5%;
+        height: 68px;
+      }
+      nav ul {
+        gap: 1.1rem;
+      }
+      nav ul li a {
+        font-size: 0.84rem;
+      }
+      nav ul li a .nav-sub {
+        font-size: 0.58rem;
+      }
+      .hero {
+        height: 82vh;
+        min-height: 500px;
+        padding-bottom: 3.5rem;
+        background-position: center 20%;
+      }
+      .hero-title {
+        font-size: 2.85rem;
+      }
+      .hero-quote-en {
+        font-size: 1.15rem;
+      }
+      .countdown-section {
+        padding-top: 2.5rem;
+      }
+      .countdown-date-badge {
+        font-size: 1.25rem;
+        padding: 0.35rem 1.4rem;
+      }
+      .countdown-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+      }
+      .countdown-card {
+        padding: 1.1rem 0.8rem;
+      }
+      .countdown-num {
+        font-size: 2rem;
+      }
+      .countdown-poem-card {
+        padding: 1.8rem 1.2rem;
+      }
+      .countdown-poem {
+        font-size: 0.88rem;
+        line-height: 1.95;
+      }
+      .detail-card, .rsvp-wrapper, .dresscode-card {
+        padding: 2.4rem 1.4rem;
+      }
+      .detail-venue-name {
+        font-size: 1.3rem;
+      }
+      .detail-date {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="#home" class="nav-brand">盛元 &amp; 以文</a>
+    <ul>
+      <li><a href="#about">關於我們<span class="nav-sub">ABOUT</span></a></li>
+      <li><a href="#details">婚禮詳情<span class="nav-sub">DETAILS</span></a></li>
+      <li><a href="#rsvp">出席回函<span class="nav-sub">RSVP</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- 首頁全螢幕封面：保留唯美婚紗照片，移除日期，字體集中在底部以完整露出新人的臉龐 -->
+  <header class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-quote-en">Nice to meet you my soulmate</div>
+      <h1 class="hero-title">Yen &amp; Angie</h1>
+      <div class="hero-quote-zh">在時光悠悠的長河中，你是我這輩子最大的幸運</div>
+    </div>
+  </header>
+
+  <!-- 倒數計時區塊：日期已移至此處，搭配白色微光卡片與誓詞短詩 (錨點 #about) -->
+  <div class="countdown-section" id="about">
+    <div class="countdown-date-badge">2027 . 01 . 10</div>
+    <div class="countdown-header-title">The Countdown</div>
+    
+    <div class="countdown-container">
+      <!-- Days Card -->
+      <div class="countdown-card">
+        <div class="countdown-num" id="timer-days">00</div>
+        <div class="countdown-line-divider"></div>
+        <div class="countdown-unit">
+          <span>Days</span>
+        </div>
+      </div>
+
+      <!-- Hours Card -->
+      <div class="countdown-card">
+        <div class="countdown-num" id="timer-hours">00</div>
+        <div class="countdown-line-divider"></div>
+        <div class="countdown-unit">
+          <span>Hrs</span>
+        </div>
+      </div>
+
+      <!-- Minutes Card -->
+      <div class="countdown-card">
+        <div class="countdown-num" id="timer-minutes">00</div>
+        <div class="countdown-line-divider"></div>
+        <div class="countdown-unit">
+          <span>Min</span>
+        </div>
+      </div>
+
+      <!-- Seconds Card -->
+      <div class="countdown-card">
+        <div class="countdown-num" id="timer-seconds">00</div>
+        <div class="countdown-line-divider"></div>
+        <div class="countdown-unit">
+          <span>Sec</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 典雅誓詞卡片：不放照片，直接呈現你們的暖心文字 -->
+    <div class="countdown-poem-card">
+      <div class="quote-symbol">“</div>
+      <div class="countdown-poem">
+        很幸運在對的時光裡，遇見了可愛的你。<br>
+        <strong>Nice to meet you, my soulmate.</strong><br>
+        這份名為未來的冒險，因為有你，<br>
+        我們的每一步，都充滿了勇氣與光芒。<br><br>
+        誠摯邀請珍貴的您親臨現場，與我們一同舉杯，分享這份純粹而美好的喜悅！
+      </div>
+    </div>
+  </div>
+
+  <section id="details">
+    <div class="section-header">
+      <div class="sub">Wedding Details</div>
+      <h2>婚禮詳情</h2>
+    </div>
+
+    <div class="detail-card">
+      <span class="detail-badge">【 午宴資訊 】</span>
+      <div class="detail-event-title">The Wedding Banquet</div>
+      <div class="detail-event-en">2027.01.10 (SUN)</div>
+
+      <!-- 婚禮日期與時間 -->
+      <div class="detail-date">12:00 準時開席</div>
+      <div class="detail-time">
+        <span class="no-wrap">時間：11:30 迎賓入席</span> | <span class="no-wrap">12:00 準時開席</span>
+      </div>
+
+      <div class="detail-divider"></div>
+
+      <!-- 飯店與廳房資訊 (套用 no-wrap 保護，3F 在地址後方) -->
+      <div class="detail-venue-name no-wrap">台北市大倉久和大飯店</div>
+      <div class="detail-hall no-wrap">久和廳</div>
+      <div class="detail-address no-wrap">台北市中山區南京東路一段9號 3F</div>
+
+      <!-- 交通指引：隱藏摺疊面板 (Accordion) -->
+      <div class="accordion">
+        <button type="button" class="accordion-header" id="accordion-toggle-btn" onclick="toggleTransportation()">
+          <span>交通指引<span class="acc-title-en">TRANSPORTATION</span></span>
+          <span class="accordion-icon" id="accordion-arrow">+</span>
+        </button>
+        <div class="accordion-content" id="accordion-panel">
+          
+          <div class="trans-block">
+            <div class="trans-tag">捷運交通指南 MRT</div>
+            <div class="trans-detail">
+              搭乘至 <strong class="no-wrap">捷運中山站</strong>（淡水信義線 / 松山新店線），自 <strong class="no-wrap">3號出口</strong> 步行約 3~5 分鐘即可抵達 <span class="no-wrap">台北市大倉久和大飯店</span>。
+            </div>
+          </div>
+
+          <div class="trans-block">
+            <div class="trans-tag">自行開車 &amp; 泊車 PARKING</div>
+            <div class="trans-detail">
+              飯店地下樓層備有貴賓專屬平面停車場，婚禮與宴會賓客於宴會期間可享免費停車消磁服務，請於離場時洽詢久和廳接待處。
+            </div>
+          </div>
+
+          <div class="trans-block">
+            <div class="trans-tag">公車指引 BUS</div>
+            <div class="trans-detail">
+              搭乘各路市區公車至 <span class="no-wrap">南京中山路口站</span> 或 <span class="no-wrap">中山市場站</span> 下車，步行即可直達。
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rsvp">
+    <div class="section-header">
+      <div class="sub">Awaiting Your Reply</div>
+      <h2>出席回函</h2>
+    </div>
+
+    <!-- 隱藏式 Iframe 提交技術 -->
+    <iframe name="hidden_submission_frame" id="hidden_submission_frame" style="display:none;"></iframe>
+
+    <div class="rsvp-wrapper" id="rsvp-form-container">
+      <form id="weddingRsvpForm" 
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfQD8lgXXLjN0xpeaUqkVFqBBYOacNQD2n3cIqy8V_UchjhwA/formResponse" 
+            method="POST" 
+            target="hidden_submission_frame" 
+            onsubmit="return handleFormSubmit();">
+
+        <!-- 姓名 NAME (entry.1886153940) -->
+        <div class="form-group">
+          <label class="form-label" for="field_name">
+            姓名 <span class="en">NAME</span><span class="req">*</span>
+          </label>
+          <input type="text" id="field_name" name="entry.1886153940" class="form-control" required placeholder="請填寫您的尊姓大名">
+        </div>
+
+        <!-- 聯絡電話 PHONE (entry.2029074728) -->
+        <div class="form-group">
+          <label class="form-label" for="field_phone">
+            聯絡電話 <span class="en">PHONE</span><span class="req">*</span>
+          </label>
+          <input type="tel" id="field_phone" name="entry.2029074728" class="form-control" required placeholder="例如：0912345678">
+        </div>
+
+        <!-- 電子信箱 EMAIL (entry.1647990662) -->
+        <div class="form-group">
+          <label class="form-label" for="field_email">
+            電子信箱 <span class="en">EMAIL</span>
+          </label>
+          <input type="email" id="field_email" name="entry.1647990662" class="form-control" placeholder="example@domain.com">
+        </div>
+
+        <!-- 與新人的關係 RELATIONSHIP (entry.2044940604) -->
+        <div class="form-group">
+          <label class="form-label" for="field_relationship">
+            與新人的關係 <span class="en">RELATIONSHIP</span><span class="req">*</span>
+          </label>
+          <select id="field_relationship" name="entry.2044940604" class="form-control" required>
+            <option value="" disabled selected>請選擇您與新人的關係</option>
+            <option value="新郎親戚">新郎親戚</option>
+            <option value="新郎家長朋友">新郎家長朋友</option>
+            <option value="新郎同學">新郎同學</option>
+            <option value="新郎大學/碩士朋友">新郎大學/碩士朋友</option>
+            <option value="新郎同事">新郎同事</option>
+            <option value="新郎其他朋友">新郎其他朋友</option>
+            <option value="新娘親戚">新娘親戚</option>
+            <option value="新娘家長朋友">新娘家長朋友</option>
+            <option value="新娘同學">新娘同學</option>
+            <option value="新娘紐西蘭朋友">新娘紐西蘭朋友</option>
+            <option value="新娘同事">新娘同事</option>
+            <option value="新娘其他朋友">新娘其他朋友</option>
+          </select>
+        </div>
+
+        <!-- 出席意願 ATTENDANCE (entry.1312972387) -->
+        <div class="form-group">
+          <label class="form-label" for="field_attendance">
+            出席意願 <span class="en">ATTENDANCE</span><span class="req">*</span>
+          </label>
+          <select id="field_attendance" name="entry.1312972387" class="form-control" required onchange="onAttendanceChanged()">
+            <option value="" disabled selected>請選擇出席狀態</option>
+            <option value="我要參加！一起見證幸福時刻">我要參加！一起見證幸福時刻</option>
+            <option value="心意相隨，祝福滿滿">心意相隨，祝福滿滿</option>
+          </select>
+        </div>
+
+        <!-- 參加午宴人數 BANQUET GUESTS (entry.1567260636) -->
+        <div class="form-group" id="group_guest_count">
+          <label class="form-label" for="field_guests">
+            參加午宴人數 <span class="en">BANQUET GUESTS</span><span class="req">*</span>
+          </label>
+          <select id="field_guests" name="entry.1567260636" class="form-control" onchange="evaluateDiningRequirementsVisibility()" required>
+            <option value="" disabled selected>請選擇參加人數</option>
+            <option value="0">0 人</option>
+            <option value="1">1 人</option>
+            <option value="2">2 人</option>
+            <option value="3">3 人</option>
+            <option value="4">4 人</option>
+            <option value="5">5 人</option>
+            <option value="6">6 人</option>
+            <option value="7">7 人</option>
+            <option value="8">8 人</option>
+            <option value="9">9 人</option>
+            <option value="10">10 人</option>
+          </select>
+        </div>
+
+        <!-- 智能表單邏輯：人數 > 0 時才展示 -->
+        <div id="conditional-dining-block">
+          <!-- 飲食需求 DIETARY (entry.1945371672) -->
+          <div class="form-group">
+            <label class="form-label" for="field_dietary">
+              飲食需求 <span class="en">DIETARY PREFERENCE</span>
+            </label>
+            <select id="field_dietary" name="entry.1945371672" class="form-control">
+              <option value="葷食">葷食</option>
+              <option value="素食">素食</option>
+            </select>
+          </div>
+
+          <!-- 兒童椅需求 HIGH CHAIR (entry.1887387302) -->
+          <div class="form-group">
+            <label class="form-label" for="field_babychair">
+              是否需要兒童椅 <span class="en">HIGH CHAIR</span>
+            </label>
+            <select id="field_babychair" name="entry.1887387302" class="form-control">
+              <option value="不需要">不需要</option>
+              <option value="需要">需要</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 給新人的祝福 BLESSING (entry.2093466386) -->
+        <div class="form-group">
+          <label class="form-label" for="field_message">
+            給新人的祝福 <span class="en">BLESSING</span>
+          </label>
+          <textarea id="field_message" name="entry.2093466386" class="form-control" rows="3" placeholder="給 Yen & Angie 的溫暖祝福..."></textarea>
+        </div>
+
+        <!-- 喜帖郵寄地址 MAILING ADDRESS (entry.845217517) -->
+        <div class="form-group">
+          <label class="form-label" for="field_address">
+            喜帖郵寄地址 <span class="en">MAILING ADDRESS</span>
+          </label>
+          <input type="text" id="field_address" name="entry.845217517" class="form-control" placeholder="請填寫郵遞區號與詳細地址">
+        </div>
+
+        <button type="submit" class="btn-submit" id="btn_submit_text">確認送出 SUBMIT</button>
+      </form>
+
+      <!-- 提交成功訊息卡片 (參考範例設計) -->
+      <div class="submission-success" id="submission-success-card">
+        <div class="heart-icon">❦</div>
+        <h3>回函已送出</h3>
+        <p>
+          感謝您的回覆，我們已收到您的祝福。<br>
+          期待與您分享這份喜悅！
+        </p>
+        <button type="button" class="btn-reset-view" onclick="resetFormView()">Back to Invite</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-names">Yen &amp; Angie</div>
+    <div class="footer-desc">© 2027 NICE TO MEET YOU MY SOULMATE. ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <!-- 背景音樂音訊與懸浮按鈕 (指定歌曲：The Blessing) -->
+  <audio id="weddingAudio" loop preload="auto">
+    <!-- 建議將下載好的鋼琴純音樂或人聲版音檔命名為 the-blessing.mp3，與 index.html 置於同目錄 -->
+    <source src="the-blessing.mp3" type="audio/mpeg">
+  </audio>
+
+  <button type="button" class="music-btn" id="musicToggleBtn" aria-label="播放背景音樂" onclick="toggleAudioPlayback()">
+    <span class="music-icon" id="musicToggleIcon">♪</span>
+  </button>
+
+  <script>
+    /* ========== 0. 背景音樂控制邏輯 ========== */
+    const audioEl = document.getElementById('weddingAudio');
+    const musicBtn = document.getElementById('musicToggleBtn');
+    const musicIcon = document.getElementById('musicToggleIcon');
+    let hasAttemptedAutoPlay = false;
+
+    function toggleAudioPlayback() {
+      if (!audioEl) return;
+      if (audioEl.paused) {
+        audioEl.play().then(() => {
+          musicBtn.classList.add('playing');
+          musicIcon.textContent = '♪';
+        }).catch(err => console.log('音訊播放提示:', err));
+      } else {
+        audioEl.pause();
+        musicBtn.classList.remove('playing');
+        musicIcon.textContent = '❙❙';
+      }
+    }
+
+    // 當訪客初次點擊或觸控網頁時，溫和嘗試啟動音樂（順應瀏覽器隱私安全策略）
+    function tryAutoPlayOnFirstInteraction() {
+      if (!hasAttemptedAutoPlay && audioEl) {
+        hasAttemptedAutoPlay = true;
+        audioEl.play().then(() => {
+          musicBtn.classList.add('playing');
+          musicIcon.textContent = '♪';
+        }).catch(() => {
+          // 若被瀏覽器嚴格阻擋，按鈕保持待點擊狀態
+        });
+        document.removeEventListener('click', tryAutoPlayOnFirstInteraction);
+        document.removeEventListener('touchstart', tryAutoPlayOnFirstInteraction);
+      }
+    }
+    document.addEventListener('click', tryAutoPlayOnFirstInteraction, { once: true });
+    document.addEventListener('touchstart', tryAutoPlayOnFirstInteraction, { once: true });
+
+    /* 1. 倒數計時器邏輯 */
+    function evaluateDiningRequirementsVisibility() {
+      const guestsInput = document.getElementById('field_guests');
+      const conditionalBlock = document.getElementById('conditional-dining-block');
+      const guestsVal = parseInt(guestsInput.value, 10);
+
+      if (!isNaN(guestsVal) && guestsVal > 0) {
+        conditionalBlock.style.display = 'block';
+      } else {
+        conditionalBlock.style.display = 'none';
+      }
+    }
+
+    function onAttendanceChanged() {
+      const attendance = document.getElementById('field_attendance').value;
+      const guestsInput = document.getElementById('field_guests');
+
+      if (attendance === '心意相隨，祝福滿滿') {
+        guestsInput.value = '0';
+      } else if (attendance === '我要參加！一起見證幸福時刻') {
+        if (!guestsInput.value || parseInt(guestsInput.value, 10) <= 0) {
+          guestsInput.value = '1';
+        }
+      }
+      evaluateDiningRequirementsVisibility();
+    }
+
+    /* ========== 4. 隱藏式 Iframe 無跳轉提交技術 ========== */
+    let formSubmitted = false;
+
+    function handleFormSubmit() {
+      const btn = document.getElementById('btn_submit_text');
+      btn.disabled = true;
+      btn.textContent = '傳送中 SUBMITTING...';
+      formSubmitted = true;
+      return true;
+    }
+
+    function handleIframeLoaded() {
+      if (formSubmitted) {
+        document.getElementById('weddingRsvpForm').style.display = 'none';
+        document.getElementById('submission-success-card').style.display = 'block';
+        
+        document.getElementById('submission-success-card').scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
+      }
+    }
+
+    function resetFormView() {
+      document.getElementById('weddingRsvpForm').reset();
+      document.getElementById('weddingRsvpForm').style.display = 'block';
+      document.getElementById('submission-success-card').style.display = 'none';
+      document.getElementById('btn_submit_text').disabled = false;
+      document.getElementById('btn_submit_text').textContent = '確認送出 SUBMIT';
+      document.getElementById('conditional-dining-block').style.display = 'none';
+      formSubmitted = false;
+      
+      document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const submissionFrame = document.getElementById('hidden_submission_frame');
+    if (submissionFrame) {
+      submissionFrame.addEventListener('load', handleIframeLoaded);
+    }
+  </script>
+</body>
+</html>
