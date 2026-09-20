@@ -127,7 +127,6 @@
       color: var(--morandi-gold);
     }
 
-    /* 首頁全螢幕婚紗封面 */
     .hero {
       position: relative;
       height: 92vh;
@@ -191,7 +190,6 @@
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
     }
 
-    /* 倒數計時區塊 */
     .countdown-section {
       position: relative;
       z-index: 10;
@@ -722,6 +720,44 @@
       color: #ffffff;
     }
 
+    .music-toggle-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--morandi-gold);
+      color: var(--morandi-gold-dark);
+      box-shadow: 0 8px 24px rgba(212, 163, 115, 0.28);
+      cursor: pointer;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      outline: none;
+    }
+
+    .music-toggle-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 28px rgba(212, 163, 115, 0.4);
+    }
+
+    .music-toggle-btn.playing .music-icon {
+      display: inline-block;
+      animation: rotateVinyl 4.5s linear infinite;
+    }
+
+    @keyframes rotateVinyl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
     footer {
       text-align: center;
       padding: 4rem 1.5rem 3.5rem;
@@ -813,6 +849,13 @@
       .detail-date {
         font-size: 1.9rem;
       }
+      .music-toggle-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.15rem;
+      }
     }
   </style>
 </head>
@@ -827,7 +870,7 @@
     </ul>
   </nav>
 
-  <!-- 首頁全螢幕封面 -->
+  <!-- 首頁全螢幕封面 (使用指定的 195 婚紗照，底置文字不擋臉) -->
   <header class="hero" id="home">
     <div class="hero-container">
       <div class="hero-quote-en">Nice to meet you my soulmate</div>
@@ -836,7 +879,6 @@
     </div>
   </header>
 
-  <!-- 倒數計時區塊 (日期已移至此處) -->
   <div class="countdown-section" id="about">
     <div class="countdown-date-badge">2027 . 01 . 10</div>
     <div class="countdown-header-title">The Countdown</div>
@@ -1107,8 +1149,17 @@
     <div class="footer-desc">© 2027 NICE TO MEET YOU MY SOULMATE. ALL RIGHTS RESERVED.</div>
   </footer>
 
+  <!-- 背景音樂播放器 (The Blessing) 與右下角懸浮按鈕 -->
+  <audio id="weddingAudio" loop preload="auto">
+    <source src="the-blessing.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicToggleBtn" class="music-toggle-btn" aria-label="播放背景音樂" onclick="toggleBGM()">
+    <span class="music-icon" id="musicIcon">♪</span>
+  </button>
+
   <script>
-    /* 1. 倒數計時器邏輯 */
+    /* 1. 倒數計時器邏輯 (開席時間：2027-01-10 12:00) */
     const targetDate = new Date('2027-01-10T12:00:00+08:00').getTime();
 
     function renderCountdown() {
@@ -1219,6 +1270,45 @@
     if (submissionFrame) {
       submissionFrame.addEventListener('load', handleIframeLoaded);
     }
+
+    /* 5. 背景音樂播放控制 */
+    const weddingAudio = document.getElementById('weddingAudio');
+    const musicToggleBtn = document.getElementById('musicToggleBtn');
+    const musicIcon = document.getElementById('musicIcon');
+    let autoPlayTriggered = false;
+
+    function toggleBGM() {
+      if (!weddingAudio) return;
+      if (weddingAudio.paused) {
+        weddingAudio.play().then(() => {
+          musicToggleBtn.classList.add('playing');
+          musicIcon.textContent = '♪';
+        }).catch(err => {
+          console.warn('音訊播放提示：請確認是否已上傳 the-blessing.mp3');
+        });
+      } else {
+        weddingAudio.pause();
+        musicToggleBtn.classList.remove('playing');
+        musicIcon.textContent = '✕';
+      }
+    }
+
+    /* 首次使用者互動時嘗試淡入播放 */
+    function triggerAutoPlayOnce() {
+      if (autoPlayTriggered || !weddingAudio) return;
+      autoPlayTriggered = true;
+      weddingAudio.play().then(() => {
+        musicToggleBtn.classList.add('playing');
+        musicIcon.textContent = '♪';
+      }).catch(() => {
+        /* 若瀏覽器政策阻擋，保留使用者手動點擊按鈕啟動 */
+      });
+      document.removeEventListener('click', triggerAutoPlayOnce);
+      document.removeEventListener('touchstart', triggerAutoPlayOnce);
+    }
+
+    document.addEventListener('click', triggerAutoPlayOnce, { once: true });
+    document.addEventListener('touchstart', triggerAutoPlayOnce, { once: true });
   </script>
 </body>
 </html>
