@@ -459,7 +459,7 @@
 
     .detail-hall {
       font-family: 'Noto Serif TC', serif;
-      font-size: 1.2rem;
+      font-size: 1.45rem;
       color: var(--morandi-gold);
       font-weight: 600;
       margin-bottom: 0.6rem;
@@ -843,7 +843,7 @@
       .detail-card, .rsvp-wrapper {
         padding: 2.4rem 1.4rem;
       }
-      .detail-venue-name {
+      .detail-venue-name, .detail-hall {
         font-size: 1.3rem;
       }
       .detail-date {
@@ -1273,7 +1273,7 @@
     const weddingAudio = document.getElementById('weddingAudio');
     const musicToggleBtn = document.getElementById('musicToggleBtn');
     const musicIcon = document.getElementById('musicIcon');
-    let autoPlayTriggered = false;
+    let autoPlayTriggered = true;
 
     function toggleBGM() {
       if (!weddingAudio) return;
