@@ -13,22 +13,33 @@
 
   <style>
     :root {
-      --morandi-gold: #d4a373;
-      --morandi-gold-dark: #b88656;
-      --morandi-gold-light: #f4ece2;
+      /* 莫蘭迪暖燕麥奶咖與溫潤奶茶香檳金系列 */
+      --morandi-gold: #be9b7b;
+      --morandi-gold-dark: #98785e;
+      --morandi-gold-deep: #7e634e;
+      --morandi-gold-light: #f7f2ec;
+      --morandi-gold-tint: #faf6f1;
+
+      /* 柔和霧感鼠尾草綠（優雅副色） */
       --morandi-sage: #8da399;
       --morandi-sage-dark: #6e847a;
-      --morandi-sage-bg: #f2f5f4;
+      --morandi-sage-bg: #f3f6f5;
+
+      /* 溫潤奶油紙質底色 */
       --bg-cream: #faf8f5;
       --bg-card: #ffffff;
-      --text-main: #332f2c;
+
+      /* 溫暖深咖啡棕文字（降低黑色壓迫感，極具柔焦雜誌感） */
+      --text-main: #443e39;
       --text-muted: #736c65;
       --text-light: #9d968f;
-      --border-accent: rgba(212, 163, 115, 0.3);
-      --border-subtle: rgba(212, 163, 115, 0.18);
+
+      /* 輕透柔焦邊框與半透明暖金漫射投影 */
+      --border-accent: rgba(190, 155, 123, 0.38);
+      --border-subtle: rgba(190, 155, 123, 0.2);
       --border-light: #ece6de;
-      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.035);
-      --shadow-card: 0 16px 40px rgba(212, 163, 115, 0.12), 0 4px 12px rgba(0, 0, 0, 0.02);
+      --shadow-soft: 0 10px 30px rgba(78, 62, 49, 0.04);
+      --shadow-card: 0 14px 38px rgba(190, 155, 123, 0.14), 0 3px 12px rgba(0, 0, 0, 0.02);
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
@@ -48,7 +59,7 @@
       background-color: var(--bg-cream);
       color: var(--text-main);
       font-family: 'Noto Serif TC', 'Cormorant Garamond', 'Songti TC', serif;
-      line-height: 1.85;
+      line-height: 1.8;
       letter-spacing: 0.03em;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -70,12 +81,12 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 76px;
+      height: 68px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 6%;
-      background: rgba(250, 248, 245, 0.88);
+      background: rgba(250, 249, 246, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
@@ -84,7 +95,7 @@
     }
 
     nav .nav-brand {
-      font-size: 1.35rem;
+      font-size: 1.15rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       color: var(--text-main);
@@ -94,12 +105,12 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 2.2rem;
+      gap: 1.8rem;
     }
 
     nav ul li a {
       font-family: 'Noto Serif TC', serif;
-      font-size: 0.92rem;
+      font-size: 0.82rem;
       font-weight: 500;
       color: var(--text-main);
       display: flex;
@@ -112,7 +123,7 @@
 
     nav ul li a .nav-sub {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.65rem;
+      font-size: 0.58rem;
       letter-spacing: 0.15em;
       color: var(--morandi-sage);
       text-transform: uppercase;
@@ -130,26 +141,27 @@
     .hero {
       position: relative;
       height: 92vh;
-      min-height: 580px;
-      background: url('https://i.postimg.cc/WzvqbyhT/JUN00195-Korean-Edited.jpg') center 22% / cover no-repeat;
+      min-height: 520px;
+      background: url('https://i.postimg.cc/WzvqbyhT/JUN00195-Korean-Edited.jpg') center top / cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
       text-align: center;
       color: #ffffff;
-      padding: 0 1.5rem 4.5rem;
+      padding: 0 1.5rem 2.8rem;
     }
 
+    /* 溫潤暖褐調薄暮光暈漸層遮罩 */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(
         180deg, 
-        rgba(26, 24, 22, 0.15) 0%, 
-        rgba(26, 24, 22, 0.25) 45%, 
-        rgba(26, 24, 22, 0.72) 100%
+        rgba(35, 30, 26, 0.04) 0%, 
+        rgba(42, 36, 31, 0.22) 55%, 
+        rgba(48, 41, 36, 0.68) 100%
       );
     }
 
@@ -162,86 +174,86 @@
 
     .hero-quote-en {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
-      letter-spacing: 0.22em;
+      font-size: 1.18rem;
+      letter-spacing: 0.18em;
       font-style: italic;
-      color: #fdfaf6;
-      margin-bottom: 0.7rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+      color: #faf5ee;
+      margin-bottom: 0.35rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
       font-weight: 500;
     }
 
     .hero-title {
-      font-size: 4rem;
+      font-size: 2.5rem;
       font-weight: 400;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       line-height: 1.15;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.45rem;
       color: #ffffff;
       font-family: 'Cormorant Garamond', serif;
-      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
     }
 
     .hero-quote-zh {
       font-family: 'Noto Serif TC', serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.2em;
+      font-size: 0.92rem;
+      letter-spacing: 0.16em;
       font-weight: 300;
-      color: #f5f1eb;
+      color: #f6f2ec;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
     }
 
     .countdown-section {
       position: relative;
       z-index: 10;
-      padding: 3.5rem 1.5rem 4.5rem;
+      padding: 3.2rem 1.5rem 4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 860px;
+      max-width: 820px;
       margin: 0 auto;
     }
 
-    /* 倒數區頂部：婚禮日期標章 */
+    /* 倒數區頂部：婚禮日期標章（暖燕麥奶咖微光） */
     .countdown-date-badge {
       display: inline-flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
+      font-size: 1.35rem;
       font-weight: 600;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       color: var(--morandi-gold-dark);
       background: #ffffff;
-      padding: 0.5rem 2.2rem;
+      padding: 0.4rem 1.8rem;
       border-radius: 35px;
-      box-shadow: 0 6px 22px rgba(212, 163, 115, 0.18);
+      box-shadow: 0 6px 20px rgba(190, 155, 123, 0.14);
       border: 1px solid var(--border-subtle);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .countdown-date-badge::before,
     .countdown-date-badge::after {
       content: '✦';
-      font-size: 0.85rem;
-      color: var(--morandi-sage);
+      font-size: 0.72rem;
+      color: var(--morandi-gold);
     }
 
     .countdown-header-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.82rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.28em;
       color: var(--morandi-sage);
       text-transform: uppercase;
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
     }
 
     .countdown-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-      max-width: 780px;
+      gap: 1rem;
+      max-width: 720px;
       width: 100%;
     }
 
@@ -252,7 +264,7 @@
       border-radius: var(--radius-md);
       border: 1px solid rgba(255, 255, 255, 0.95);
       box-shadow: var(--shadow-card);
-      padding: 1.3rem 1rem;
+      padding: 1.15rem 0.85rem;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
@@ -263,13 +275,14 @@
 
     .countdown-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 18px 42px rgba(212, 163, 115, 0.2);
+      box-shadow: 0 14px 36px rgba(190, 155, 123, 0.22);
     }
 
+    /* 倒數數字採用溫潤暖燕麥奶咖色 */
     .countdown-num {
-      font-size: 2.3rem;
+      font-size: 1.95rem;
       font-weight: 600;
-      color: var(--morandi-gold);
+      color: var(--morandi-gold-dark);
       line-height: 1;
       font-family: 'Cormorant Garamond', serif;
       letter-spacing: 0.02em;
@@ -277,14 +290,14 @@
 
     .countdown-line-divider {
       width: 1px;
-      height: 28px;
-      background: linear-gradient(180deg, transparent, rgba(212, 163, 115, 0.5), transparent);
-      margin: 0 0.4rem;
+      height: 24px;
+      background: linear-gradient(180deg, transparent, rgba(190, 155, 123, 0.4), transparent);
+      margin: 0 0.35rem;
     }
 
     .countdown-unit {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.65rem;
       font-weight: 500;
       color: var(--text-muted);
       letter-spacing: 0.15em;
@@ -295,65 +308,76 @@
       line-height: 1.2;
     }
 
-    /* 倒數計時下方的專屬誓約與邀請短詩 */
     .countdown-poem-card {
-      margin-top: 2.5rem;
-      max-width: 660px;
+      margin-top: 2.2rem;
+      max-width: 600px;
       text-align: center;
       background: #ffffff;
-      padding: 2.3rem 2.2rem;
+      padding: 2rem 1.8rem;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-light);
       box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .countdown-poem-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 28%;
+      right: 28%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--morandi-gold), transparent);
+      opacity: 0.6;
     }
 
     .countdown-poem-card .quote-symbol {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
+      font-size: 1.6rem;
       color: var(--morandi-gold);
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .countdown-poem {
       font-family: 'Noto Serif TC', serif;
-      font-size: 1.12rem;
-      color: var(--text-main);
-      line-height: 2.2;
-      letter-spacing: 0.05em;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 2.05;
+      letter-spacing: 0.04em;
     }
 
     .countdown-poem strong {
-      font-size: 1.18rem;
-      color: var(--morandi-gold-dark);
+      font-size: 1rem;
+      color: var(--morandi-gold-deep);
       font-weight: 600;
       letter-spacing: 0.05em;
     }
 
     section {
-      padding: 5.5rem 1.5rem;
-      max-width: 860px;
+      padding: 4.8rem 1.5rem;
+      max-width: 820px;
       margin: 0 auto;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
     }
 
     .section-header .sub {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.3em;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--morandi-sage);
       font-weight: 500;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .section-header h2 {
       font-family: 'Noto Serif TC', serif;
-      font-size: 2.3rem;
+      font-size: 1.85rem;
       font-weight: 400;
       color: var(--text-main);
       letter-spacing: 0.12em;
@@ -365,17 +389,18 @@
       content: '';
       position: absolute;
       left: 50%;
-      bottom: -10px;
+      bottom: -8px;
       transform: translateX(-50%);
-      width: 36px;
-      height: 1px;
-      background-color: var(--morandi-gold);
+      width: 34px;
+      height: 1.5px;
+      background: var(--morandi-gold);
+      opacity: 0.85;
     }
 
     .detail-card {
       background: #ffffff;
       border-radius: var(--radius-lg);
-      padding: 3.6rem 2.6rem;
+      padding: 3.2rem 2.2rem;
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--border-light);
       text-align: center;
@@ -385,10 +410,10 @@
     .detail-card::before {
       content: '';
       position: absolute;
-      top: 14px;
-      left: 14px;
-      right: 14px;
-      bottom: 14px;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
       border: 1px dashed var(--border-subtle);
       border-radius: 14px;
       pointer-events: none;
@@ -397,37 +422,38 @@
     .detail-badge {
       display: inline-block;
       font-family: 'Noto Serif TC', serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.22em;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--morandi-gold-dark);
+      color: var(--morandi-gold-deep);
       background: var(--morandi-gold-light);
-      padding: 0.35rem 1.4rem;
+      padding: 0.35rem 1.3rem;
       border-radius: 30px;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(190, 155, 123, 0.25);
     }
 
     .detail-event-title {
       font-family: 'Noto Serif TC', serif;
-      font-size: 1.7rem;
+      font-size: 1.45rem;
       font-weight: 500;
       color: var(--text-main);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
       letter-spacing: 0.08em;
     }
 
     .detail-event-en {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
+      font-size: 1.35rem;
       font-weight: 600;
       color: var(--morandi-gold);
       letter-spacing: 0.12em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
     }
 
     .detail-date {
       font-family: 'Noto Serif TC', 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
+      font-size: 1.85rem;
       font-weight: 500;
       color: var(--morandi-gold-dark);
       letter-spacing: 0.1em;
@@ -436,42 +462,42 @@
 
     .detail-time {
       font-family: 'Noto Serif TC', serif;
-      font-size: 1.12rem;
+      font-size: 0.95rem;
       color: var(--text-main);
       font-weight: 500;
-      margin-top: 0.5rem;
-      margin-bottom: 1.8rem;
+      margin-top: 0.45rem;
+      margin-bottom: 1.6rem;
     }
 
     .detail-divider {
-      width: 48px;
-      height: 1px;
-      background: var(--morandi-sage);
-      margin: 0 auto 2rem;
-      opacity: 0.6;
+      width: 40px;
+      height: 1.5px;
+      background: var(--morandi-gold);
+      margin: 0 auto 1.8rem;
+      opacity: 0.55;
     }
 
     .detail-venue-name {
       font-family: 'Noto Serif TC', serif;
-      font-size: 1.45rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: var(--text-main);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .detail-hall {
       font-family: 'Noto Serif TC', serif;
-      font-size: 1.45rem;
-      color: var(--morandi-gold);
+      font-size: 1.25rem;
+      color: var(--morandi-gold-dark);
       font-weight: 600;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
 
     .detail-address {
       font-family: 'Noto Serif TC', serif;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
     }
 
     .accordion {
@@ -480,13 +506,13 @@
       overflow: hidden;
       background: #ffffff;
       text-align: left;
-      margin-top: 1.5rem;
+      margin-top: 1.3rem;
     }
 
     .accordion-header {
       width: 100%;
-      background: rgba(141, 163, 153, 0.08);
-      padding: 1.15rem 1.6rem;
+      background: var(--morandi-gold-tint);
+      padding: 1rem 1.4rem;
       border: none;
       outline: none;
       cursor: pointer;
@@ -494,28 +520,28 @@
       justify-content: space-between;
       align-items: center;
       font-family: 'Noto Serif TC', serif;
-      font-size: 1.02rem;
+      font-size: 0.92rem;
       font-weight: 600;
       color: var(--text-main);
       transition: background 0.3s ease;
     }
 
     .accordion-header:hover {
-      background: rgba(141, 163, 153, 0.15);
+      background: #f4eee7;
     }
 
     .accordion-header .acc-title-en {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.68rem;
       letter-spacing: 0.15em;
       color: var(--morandi-sage);
-      margin-left: 0.6rem;
+      margin-left: 0.5rem;
       font-weight: 400;
     }
 
     .accordion-icon {
-      font-size: 1.3rem;
-      color: var(--morandi-sage);
+      font-size: 1.15rem;
+      color: var(--morandi-gold-dark);
       font-weight: 300;
       transition: transform 0.35s ease;
       line-height: 1;
@@ -526,15 +552,15 @@
       overflow: hidden;
       transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
       background: #ffffff;
-      padding: 0 1.6rem;
+      padding: 0 1.4rem;
     }
 
     .accordion-content.open {
-      padding: 1.6rem 1.6rem 1.8rem;
+      padding: 1.4rem 1.4rem 1.6rem;
     }
 
     .trans-block {
-      margin-bottom: 1.3rem;
+      margin-bottom: 1.1rem;
     }
 
     .trans-block:last-child {
@@ -543,55 +569,55 @@
 
     .trans-tag {
       font-family: 'Noto Serif TC', serif;
-      font-size: 0.95rem;
+      font-size: 0.86rem;
       font-weight: 600;
-      color: var(--morandi-gold-dark);
+      color: var(--morandi-gold-deep);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.35rem;
+      gap: 0.45rem;
+      margin-bottom: 0.3rem;
     }
 
     .trans-tag::before {
       content: '◆';
-      font-size: 0.65rem;
-      color: var(--morandi-sage);
+      font-size: 0.55rem;
+      color: var(--morandi-gold);
     }
 
     .trans-detail {
       font-family: 'Noto Serif TC', serif;
-      font-size: 0.95rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
-      line-height: 1.8;
-      padding-left: 1.1rem;
+      line-height: 1.75;
+      padding-left: 1rem;
     }
 
     .rsvp-wrapper {
       background: #ffffff;
       border-radius: var(--radius-lg);
-      padding: 3.5rem 2.8rem;
+      padding: 3rem 2.4rem;
       border: 1px solid var(--border-light);
       box-shadow: var(--shadow-soft);
     }
 
     .form-group {
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.5rem;
     }
 
     .form-label {
       font-family: 'Noto Serif TC', serif;
       display: flex;
       align-items: baseline;
-      gap: 0.6rem;
-      margin-bottom: 0.55rem;
-      font-size: 0.98rem;
+      gap: 0.5rem;
+      margin-bottom: 0.45rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--text-main);
     }
 
     .form-label .en {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.68rem;
       letter-spacing: 0.12em;
       color: var(--morandi-sage);
       font-weight: 500;
@@ -599,16 +625,16 @@
     }
 
     .form-label .req {
-      color: #c97d60;
-      font-size: 0.85rem;
+      color: #b06553;
+      font-size: 0.8rem;
       margin-left: 2px;
     }
 
     .form-control {
       width: 100%;
-      padding: 0.9rem 1.2rem;
+      padding: 0.8rem 1.05rem;
       font-family: 'Noto Serif TC', serif;
-      font-size: 0.96rem;
+      font-size: 0.88rem;
       border: 1px solid var(--border-light);
       border-radius: var(--radius-sm);
       background: #fafaf9;
@@ -620,97 +646,98 @@
     .form-control:focus {
       border-color: var(--morandi-gold);
       background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.16);
+      box-shadow: 0 0 0 3px rgba(190, 155, 123, 0.18);
     }
 
     select.form-control {
       appearance: none;
       -webkit-appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4a373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23be9b7b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
       background-repeat: no-repeat;
-      background-position: right 1.1rem center;
-      background-size: 1em;
+      background-position: right 1rem center;
+      background-size: 0.9em;
       cursor: pointer;
       font-family: 'Noto Serif TC', serif;
     }
 
     #conditional-dining-block {
       display: none;
-      background: var(--morandi-sage-bg);
-      border-left: 3px solid var(--morandi-sage);
+      background: var(--morandi-gold-tint);
+      border-left: 3px solid var(--morandi-gold);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 1.4rem 1.4rem 0.4rem 1.4rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1.8rem;
+      padding: 1.2rem 1.2rem 0.3rem 1.2rem;
+      margin-top: 0.4rem;
+      margin-bottom: 1.5rem;
       animation: fadeInSlide 0.35s ease-out;
     }
 
+    /* 送出按鈕：絲緞般的雙色奶茶漸層與半透明柔光投影 */
     .btn-submit {
       width: 100%;
-      background: var(--morandi-gold);
+      background: linear-gradient(135deg, #be9b7b 0%, #98785e 100%);
       color: #ffffff;
       border: none;
-      padding: 1.05rem 2rem;
-      font-size: 1.02rem;
+      padding: 0.95rem 1.8rem;
+      font-size: 0.92rem;
       font-family: 'Noto Serif TC', serif;
       font-weight: 600;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       border-radius: var(--radius-sm);
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(212, 163, 115, 0.3);
+      box-shadow: 0 5px 18px rgba(190, 155, 123, 0.28);
       transition: all 0.3s ease;
-      margin-top: 0.8rem;
+      margin-top: 0.6rem;
     }
 
     .btn-submit:hover {
-      background: var(--morandi-gold-dark);
+      background: linear-gradient(135deg, #af8b6c 0%, #896b52 100%);
       transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(212, 163, 115, 0.4);
+      box-shadow: 0 9px 24px rgba(190, 155, 123, 0.38);
     }
 
     .submission-success {
       display: none;
       text-align: center;
-      padding: 4rem 1.5rem;
+      padding: 3.5rem 1.5rem;
       background: #ffffff;
       border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--border-accent);
       box-shadow: var(--shadow-card);
       animation: fadeIn 0.6s ease;
     }
 
     .submission-success .heart-icon {
-      font-size: 2.6rem;
+      font-size: 2.2rem;
       color: var(--morandi-gold);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       display: inline-block;
     }
 
     .submission-success h3 {
       font-family: 'Noto Serif TC', serif;
-      font-size: 2rem;
+      font-size: 1.65rem;
       color: var(--text-main);
       font-weight: 500;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
       letter-spacing: 0.1em;
     }
 
     .submission-success p {
       font-family: 'Noto Serif TC', serif;
       color: var(--text-muted);
-      font-size: 1.05rem;
+      font-size: 0.92rem;
       line-height: 1.8;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.6rem;
     }
 
     .btn-reset-view {
       display: inline-block;
-      padding: 0.6rem 1.6rem;
+      padding: 0.55rem 1.5rem;
       border: 1px solid var(--morandi-gold);
       color: var(--morandi-gold-dark);
       background: transparent;
       border-radius: 30px;
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       cursor: pointer;
       letter-spacing: 0.1em;
       transition: all 0.3s ease;
@@ -722,64 +749,64 @@
       color: #ffffff;
     }
 
-    .music-toggle-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--morandi-gold);
-      color: var(--morandi-gold-dark);
-      box-shadow: 0 8px 24px rgba(212, 163, 115, 0.28);
-      cursor: pointer;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-      outline: none;
-    }
-
-    .music-toggle-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 28px rgba(212, 163, 115, 0.4);
-    }
-
-    .music-toggle-btn.playing .music-icon {
-      display: inline-block;
-      animation: rotateVinyl 4.5s linear infinite;
-    }
-
-    @keyframes rotateVinyl {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
     footer {
       text-align: center;
-      padding: 4rem 1.5rem 3.5rem;
+      padding: 3.5rem 1.5rem 3rem;
       border-top: 1px solid var(--border-light);
       background: #faf8f5;
     }
 
     .footer-names {
-      font-size: 1.65rem;
-      letter-spacing: 0.2em;
-      color: var(--morandi-gold);
+      font-size: 1.4rem;
+      letter-spacing: 0.18em;
+      color: var(--morandi-gold-dark);
       font-family: 'Cormorant Garamond', serif;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .footer-desc {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
       color: var(--text-light);
+    }
+
+    /* 懸浮音樂播放器按鈕（莫蘭迪暖金微光） */
+    .music-toggle-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-accent);
+      color: var(--morandi-gold-dark);
+      box-shadow: 0 6px 22px rgba(190, 155, 123, 0.22);
+      cursor: pointer;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .music-toggle-btn:hover {
+      transform: scale(1.08);
+      background: #ffffff;
+      box-shadow: 0 8px 26px rgba(190, 155, 123, 0.32);
+    }
+
+    .music-toggle-btn.playing .music-icon {
+      animation: rotateDisc 5s linear infinite;
+    }
+
+    @keyframes rotateDisc {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     @keyframes fadeIn {
@@ -795,72 +822,87 @@
     @media (max-width: 768px) {
       nav {
         padding: 0 5%;
-        height: 68px;
+        height: 62px;
+      }
+      nav .nav-brand {
+        font-size: 1.05rem;
       }
       nav ul {
-        gap: 1.1rem;
+        gap: 0.9rem;
       }
       nav ul li a {
-        font-size: 0.84rem;
+        font-size: 0.75rem;
       }
       nav ul li a .nav-sub {
-        font-size: 0.58rem;
+        font-size: 0.52rem;
       }
       .hero {
         height: 82vh;
-        min-height: 500px;
-        padding-bottom: 3.5rem;
-        background-position: center 20%;
+        min-height: 480px;
+        padding-bottom: 2.2rem;
+        background-position: center top;
       }
       .hero-title {
-        font-size: 2.85rem;
+        font-size: 1.9rem;
       }
       .hero-quote-en {
-        font-size: 1.35rem;
+        font-size: 0.95rem;
+      }
+      .hero-quote-zh {
+        font-size: 0.8rem;
       }
       .countdown-section {
-        padding-top: 2.5rem;
+        padding-top: 2.2rem;
       }
       .countdown-date-badge {
-        font-size: 1.45rem;
-        padding: 0.45rem 1.8rem;
-        gap: 0.7rem;
+        font-size: 1.2rem;
+        padding: 0.35rem 1.4rem;
+        gap: 0.6rem;
+      }
+      .section-header h2 {
+        font-size: 1.6rem;
+      }
+      .detail-event-title {
+        font-size: 1.3rem;
       }
       .detail-event-en {
-        font-size: 1.45rem;
+        font-size: 1.2rem;
       }
       .countdown-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
+        gap: 0.7rem;
       }
       .countdown-card {
-        padding: 1.1rem 0.8rem;
+        padding: 0.95rem 0.7rem;
       }
       .countdown-num {
-        font-size: 2rem;
+        font-size: 1.65rem;
       }
       .countdown-poem-card {
-        padding: 2rem 1.4rem;
+        padding: 1.6rem 1.2rem;
       }
       .countdown-poem {
-        font-size: 1.02rem;
-        line-height: 2.05;
+        font-size: 0.86rem;
+        line-height: 1.9;
       }
       .detail-card, .rsvp-wrapper {
-        padding: 2.4rem 1.4rem;
+        padding: 2.2rem 1.3rem;
       }
       .detail-venue-name, .detail-hall {
-        font-size: 1.3rem;
+        font-size: 1.12rem;
       }
       .detail-date {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
+      }
+      .detail-time {
+        font-size: 0.85rem;
       }
       .music-toggle-btn {
-        bottom: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
-        font-size: 1.15rem;
+        bottom: 18px;
+        right: 18px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.05rem;
       }
     }
   </style>
@@ -1046,15 +1088,13 @@
             <option value="新郎親戚">新郎親戚</option>
             <option value="新郎家長朋友">新郎家長朋友</option>
             <option value="新郎同學">新郎同學</option>
-            <option value="新郎大學/碩士朋友">新郎大學/碩士朋友</option>
             <option value="新郎同事">新郎同事</option>
-            <option value="新郎其他朋友">新郎其他朋友</option>
+            <option value="新郎業界先進">新郎業界先進</option>
             <option value="新娘親戚">新娘親戚</option>
             <option value="新娘家長朋友">新娘家長朋友</option>
-            <option value="新娘同學">新娘同學</option>
             <option value="新娘紐西蘭朋友">新娘紐西蘭朋友</option>
             <option value="新娘同事">新娘同事</option>
-            <option value="新娘其他朋友">新娘其他朋友</option>
+            <option value="新郎新娘共同朋友">新郎新娘共同朋友</option>
           </select>
         </div>
 
@@ -1126,10 +1166,12 @@
 
         <!-- 喜帖郵寄地址 MAILING ADDRESS (entry.845217517) -->
         <div class="form-group">
-          <label class="form-label" for="field_address">
-            喜帖郵寄地址 <span class="en">MAILING ADDRESS</span>
+          <label class="form-label" for="field_address" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem;">
+            <span>喜帖郵寄地址</span>
+            <span class="en">MAILING ADDRESS</span>
+            <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted); letter-spacing: 0.02em;">（若已收到紙本喜帖則無須填寫）</span>
           </label>
-          <input type="text" id="field_address" name="entry.845217517" class="form-control" placeholder="請填寫郵遞區號與詳細地址">
+          <input type="text" id="field_address" name="entry.845217517" class="form-control" placeholder="請填寫郵遞區號與詳細收件地址">
         </div>
 
         <button type="submit" class="btn-submit" id="btn_submit_text">確認送出 SUBMIT</button>
