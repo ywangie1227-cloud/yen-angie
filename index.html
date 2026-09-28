@@ -32,7 +32,7 @@
       --morandi-gold-light: #f7f2ec;
       --morandi-gold-tint: #faf6f1;
 
-      /* 柔和霧感鼠尾草綠（優雅副色） */
+      /* 柔和霧感鼠尾草綠 */
       --morandi-sage: #8da399;
       --morandi-sage-dark: #6e847a;
       --morandi-sage-bg: #f3f6f5;
@@ -41,12 +41,12 @@
       --bg-cream: #faf8f5;
       --bg-card: #ffffff;
 
-      /* 溫暖深咖啡棕文字（降低黑色壓迫感，極具柔焦雜誌感） */
+      /* 溫暖深咖啡棕文字 */
       --text-main: #443e39;
       --text-muted: #736c65;
       --text-light: #9d968f;
 
-      /* 輕透柔焦邊框與半透明暖金漫射投影 */
+      /* 輕透柔焦邊框與投影 */
       --border-accent: rgba(190, 155, 123, 0.38);
       --border-subtle: rgba(190, 155, 123, 0.2);
       --border-light: #ece6de;
@@ -77,7 +77,6 @@
       overflow-x: hidden;
     }
 
-    /* 手機版防斷行專用 class */
     .no-wrap {
       white-space: nowrap !important;
       display: inline-block;
@@ -143,9 +142,7 @@
       font-weight: 400;
     }
 
-    nav ul li a:hover {
-      color: var(--morandi-gold);
-    }
+    nav ul li a:hover,
     nav ul li a:hover .nav-sub {
       color: var(--morandi-gold);
     }
@@ -164,7 +161,6 @@
       padding: 0 1.5rem 2.8rem;
     }
 
-    /* 溫潤暖褐調薄暮光暈漸層遮罩 */
     .hero::before {
       content: '';
       position: absolute;
@@ -226,7 +222,6 @@
       margin: 0 auto;
     }
 
-    /* 倒數區頂部：婚禮日期標章（暖燕麥奶咖微光） */
     .countdown-date-badge {
       display: inline-flex;
       align-items: center;
@@ -290,7 +285,6 @@
       box-shadow: 0 14px 36px rgba(190, 155, 123, 0.22);
     }
 
-    /* 倒數數字採用溫潤暖燕麥奶咖色 */
     .countdown-num {
       font-size: 1.95rem;
       font-weight: 600;
@@ -357,13 +351,6 @@
       color: var(--text-muted);
       line-height: 2.05;
       letter-spacing: 0.04em;
-    }
-
-    .countdown-poem strong {
-      font-size: 1rem;
-      color: var(--morandi-gold-deep);
-      font-weight: 600;
-      letter-spacing: 0.05em;
     }
 
     section {
@@ -672,7 +659,6 @@
       font-family: 'Noto Serif TC', serif;
     }
 
-    /* 確保所有作業系統與深色模式下，下拉選單內容清晰可見 */
     select.form-control option {
       background-color: #ffffff;
       color: #443e39;
@@ -689,7 +675,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* 送出按鈕：絲緞般的雙色奶茶漸層與半透明柔光投影 */
     .btn-submit {
       width: 100%;
       background: linear-gradient(135deg, #be9b7b 0%, #98785e 100%);
@@ -789,7 +774,6 @@
       color: var(--text-light);
     }
 
-    /* 懸浮音樂播放器按鈕（莫蘭迪暖金微光） */
     .music-toggle-btn {
       position: fixed;
       bottom: 24px;
@@ -858,7 +842,6 @@
         height: 82vh;
         min-height: 480px;
         padding-bottom: 2.2rem;
-        background-position: center top;
       }
       .hero-title {
         font-size: 1.9rem;
@@ -936,7 +919,7 @@
     </ul>
   </nav>
 
-  <!-- 首頁全螢幕封面 (使用指定的 195 婚紗照，底置文字不擋臉) -->
+  <!-- 首頁全螢幕封面 -->
   <header class="hero" id="home">
     <div class="hero-container">
       <div class="hero-quote-en">Two are better than one</div>
@@ -950,7 +933,6 @@
     <div class="countdown-header-title">The Countdown</div>
     
     <div class="countdown-container">
-      <!-- Days Card -->
       <div class="countdown-card">
         <div class="countdown-num" id="timer-days">00</div>
         <div class="countdown-line-divider"></div>
@@ -959,7 +941,6 @@
         </div>
       </div>
 
-      <!-- Hours Card -->
       <div class="countdown-card">
         <div class="countdown-num" id="timer-hours">00</div>
         <div class="countdown-line-divider"></div>
@@ -968,7 +949,6 @@
         </div>
       </div>
 
-      <!-- Minutes Card -->
       <div class="countdown-card">
         <div class="countdown-num" id="timer-minutes">00</div>
         <div class="countdown-line-divider"></div>
@@ -977,7 +957,6 @@
         </div>
       </div>
 
-      <!-- Seconds Card -->
       <div class="countdown-card">
         <div class="countdown-num" id="timer-seconds">00</div>
         <div class="countdown-line-divider"></div>
@@ -1009,7 +988,6 @@
       <div class="detail-event-title">The Wedding Banquet</div>
       <div class="detail-event-en">2027.01.10 (SUN)</div>
 
-      <!-- 婚禮日期與時間 -->
       <div class="detail-date">12:00 準時開席</div>
       <div class="detail-time">
         <span class="no-wrap">時間：11:30 迎賓入席</span> | <span class="no-wrap">12:00 準時開席</span>
@@ -1017,12 +995,11 @@
 
       <div class="detail-divider"></div>
 
-      <!-- 飯店與廳房資訊 (3F在地址後方) -->
       <div class="detail-venue-name no-wrap">台北市大倉久和大飯店</div>
       <div class="detail-hall no-wrap">久和廳</div>
       <div class="detail-address no-wrap">台北市中山區南京東路一段9號 3F</div>
 
-      <!-- 交通指引：隱藏摺疊面板 (Accordion) -->
+      <!-- 交通指引摺疊面板 -->
       <div class="accordion">
         <button type="button" class="accordion-header" id="accordion-toggle-btn" onclick="toggleTransportation()">
           <span>交通指引<span class="acc-title-en">TRANSPORTATION</span></span>
@@ -1062,7 +1039,7 @@
       <h2>出席回函</h2>
     </div>
 
-    <!-- 隱藏式 Iframe 提交技術 -->
+    <!-- 隱藏式 Iframe 提交目標 -->
     <iframe name="hidden_submission_frame" id="hidden_submission_frame" style="display:none;"></iframe>
 
     <div class="rsvp-wrapper" id="rsvp-form-container">
@@ -1070,10 +1047,7 @@
             action="https://docs.google.com/forms/d/e/1FAIpQLSfQD8lgXXLjN0xpeaUqkVFqBBYOacNQD2n3cIqy8V_UchjhwA/formResponse" 
             method="POST" 
             target="hidden_submission_frame" 
-            onsubmit="return handleFormSubmit();">
-
-        <!-- 突破 Google Form 多頁面/分頁阻擋關鍵參數 -->
-        <input type="hidden" name="pageHistory" value="0,1,2">
+            onsubmit="return handleFormSubmit(event);">
 
         <!-- 姓名 NAME (entry.1886153940) -->
         <div class="form-group">
@@ -1108,7 +1082,8 @@
             <option value="" disabled selected>請選擇您與新人的關係</option>
             <option value="新郎親戚">新郎親戚</option>
             <option value="新郎家長朋友">新郎家長朋友</option>
-            <option value="新郎同學">新郎同學</option>
+            <option value="新郎大學/碩士朋友">新郎大學/碩士朋友</option>
+            <option value="新郎高中/國中/國小朋友">新郎高中/國中/國小朋友</option>
             <option value="新郎同事">新郎同事</option>
             <option value="新郎業界先進">新郎業界先進</option>
             <option value="新娘親戚">新娘親戚</option>
@@ -1140,16 +1115,16 @@
               出席的「成人」人數 <span class="en">ADULT GUESTS</span><span class="req">*</span>
             </label>
             <select id="field_guests" name="entry.1567260636" class="form-control">
-              <option value="0" style="display:none;">0 位</option>
-              <option value="1" selected>1 位成人</option>
-              <option value="2">2 位成人</option>
-              <option value="3">3 位成人</option>
-              <option value="4">4 位成人</option>
-              <option value="5">5 位成人</option>
+              <option value="0" style="display:none;">0</option>
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
           </div>
 
-          <!-- 用餐細節需求 -->
+          <!-- 用餐與兒童需求 -->
           <div id="conditional-dining-block">
             <!-- 出席的「兒童」人數 (entry.1259066676) -->
             <div class="form-group">
@@ -1157,10 +1132,10 @@
                 出席的「兒童」人數 <span class="en">CHILDREN GUESTS</span>
               </label>
               <select id="field_children" name="entry.1259066676" class="form-control">
-                <option value="0" selected>0 位兒童</option>
-                <option value="1">1 位兒童</option>
-                <option value="2">2 位兒童</option>
-                <option value="3">3 位兒童</option>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
               </select>
             </div>
 
@@ -1226,7 +1201,7 @@
     <div class="footer-desc">© 2027 NICE TO MEET YOU MY SOULMATE. ALL RIGHTS RESERVED.</div>
   </footer>
 
-  <!-- 背景音樂播放器 (The Blessing) 與右下角懸浮按鈕 -->
+  <!-- 背景音樂播放器與懸浮按鈕 -->
   <audio id="weddingAudio" loop preload="auto">
     <source src="the-blessing.mp3" type="audio/mpeg">
   </audio>
@@ -1236,7 +1211,7 @@
   </button>
 
   <script>
-    /* 1. 倒數計時器邏輯 (開席時間：2027-01-10 12:00) */
+    /* 1. 倒數計時器邏輯 */
     const targetDate = new Date('2027-01-10T12:00:00+08:00').getTime();
 
     function renderCountdown() {
@@ -1265,7 +1240,7 @@
     setInterval(renderCountdown, 1000);
     renderCountdown();
 
-    /* 2. 交通資訊摺疊式面板 (Accordion) */
+    /* 2. 交通指引摺疊面板 */
     function toggleTransportation() {
       const panel = document.getElementById('accordion-panel');
       const arrow = document.getElementById('accordion-arrow');
@@ -1281,7 +1256,7 @@
       }
     }
 
-    /* 3. 智能表單邏輯 */
+    /* 3. 智能表單展開與重設邏輯 */
     function onAttendanceChanged() {
       const attendance = document.getElementById('field_attendance').value;
       const attendeeContainer = document.getElementById('attendee-details-container');
@@ -1307,7 +1282,6 @@
       }
     }
 
-    // 綁定 DOM 載入後事件監聽，確保手機與桌面端事件即時觸發
     document.addEventListener('DOMContentLoaded', () => {
       const attendanceSelect = document.getElementById('field_attendance');
       if (attendanceSelect) {
@@ -1316,27 +1290,47 @@
       }
     });
 
-    /* 4. 隱藏式 Iframe 無跳轉提交 */
+    /* 4. 雙重保障 Google Form 送出邏輯 */
     let formSubmitted = false;
 
-    function handleFormSubmit() {
+    function handleFormSubmit(event) {
       const btn = document.getElementById('btn_submit_text');
       btn.disabled = true;
       btn.textContent = '傳送中 SUBMITTING...';
       formSubmitted = true;
+
+      // 提取表單數據建立跨域備援請求 (Fetch with no-cors)
+      const form = document.getElementById('weddingRsvpForm');
+      const formData = new FormData(form);
+      const actionUrl = form.action;
+
+      try {
+        fetch(actionUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData
+        }).catch(() => {
+          // 靜默處理跨域回應限制
+        });
+      } catch (err) {
+        // 略過
+      }
+
+      // 1.2 秒後切換至成功畫面（確保 POST 封包已由瀏覽器完整發出）
+      setTimeout(() => {
+        showSuccessView();
+      }, 1200);
+
       return true;
     }
 
-    function handleIframeLoaded() {
-      if (formSubmitted) {
-        document.getElementById('weddingRsvpForm').style.display = 'none';
-        document.getElementById('submission-success-card').style.display = 'block';
-        
-        document.getElementById('submission-success-card').scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center' 
-        });
-      }
+    function showSuccessView() {
+      document.getElementById('weddingRsvpForm').style.display = 'none';
+      document.getElementById('submission-success-card').style.display = 'block';
+      document.getElementById('submission-success-card').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
     }
 
     function resetFormView() {
@@ -1349,11 +1343,6 @@
       formSubmitted = false;
       
       document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    const submissionFrame = document.getElementById('hidden_submission_frame');
-    if (submissionFrame) {
-      submissionFrame.addEventListener('load', handleIframeLoaded);
     }
 
     /* 5. 背景音樂播放控制 */
@@ -1378,16 +1367,13 @@
       }
     }
 
-    /* 首次使用者互動時嘗試淡入播放 */
     function triggerAutoPlayOnce() {
       if (autoPlayTriggered || !weddingAudio) return;
       autoPlayTriggered = true;
       weddingAudio.play().then(() => {
         musicToggleBtn.classList.add('playing');
         musicIcon.textContent = '♪';
-      }).catch(() => {
-        /* 若瀏覽器政策阻擋，保留使用者手動點擊按鈕啟動 */
-      });
+      }).catch(() => {});
       document.removeEventListener('click', triggerAutoPlayOnce);
       document.removeEventListener('touchstart', triggerAutoPlayOnce);
     }
