@@ -8,9 +8,12 @@
 
   <!-- Open Graph / Facebook / LINE 專屬分享預覽標籤 -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ywangie1227-cloud.github.io/yen-angie/">
   <meta property="og:title" content="Yen &amp; Angie | Wedding Invitation">
   <meta property="og:description" content="在最好的時光裡相遇，在滿溢的愛中定下約定。誠摯邀請您見證我們的幸福時刻！">
   <meta property="og:image" content="https://i.postimg.cc/qRJyp6cZ/wedding-logo-golf.jpg">
+  <meta property="og:image:secure_url" content="https://i.postimg.cc/qRJyp6cZ/wedding-logo-golf.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Yen &amp; Angie Wedding">
@@ -678,14 +681,12 @@
     }
 
     #conditional-dining-block {
-      display: none;
       background: var(--morandi-gold-tint);
       border-left: 3px solid var(--morandi-gold);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       padding: 1.2rem 1.2rem 0.3rem 1.2rem;
       margin-top: 0.4rem;
       margin-bottom: 1.5rem;
-      animation: fadeInSlide 0.35s ease-out;
     }
 
     /* 送出按鈕：絲緞般的雙色奶茶漸層與半透明柔光投影 */
@@ -1071,6 +1072,9 @@
             target="hidden_submission_frame" 
             onsubmit="return handleFormSubmit();">
 
+        <!-- 突破 Google Form 多頁面/分頁阻擋關鍵參數 -->
+        <input type="hidden" name="pageHistory" value="0,1,2">
+
         <!-- 姓名 NAME (entry.1886153940) -->
         <div class="form-group">
           <label class="form-label" for="field_name">
@@ -1090,9 +1094,9 @@
         <!-- 電子信箱 EMAIL (entry.1647990662) -->
         <div class="form-group">
           <label class="form-label" for="field_email">
-            電子信箱 <span class="en">EMAIL</span>
+            電子信箱 / LINE ID <span class="en">EMAIL / LINE</span>
           </label>
-          <input type="email" id="field_email" name="entry.1647990662" class="form-control" placeholder="example@domain.com">
+          <input type="text" id="field_email" name="entry.1647990662" class="form-control" placeholder="example@domain.com 或 LINE ID">
         </div>
 
         <!-- 與新人的關係 RELATIONSHIP (entry.2044940604) -->
@@ -1118,7 +1122,7 @@
         <!-- 出席意願 ATTENDANCE (entry.1312972387) -->
         <div class="form-group">
           <label class="form-label" for="field_attendance">
-            出席意願 <span class="en">ATTENDANCE</span><span class="req">*</span>
+            是否可以參加婚禮呢 <span class="en">ATTENDANCE</span><span class="req">*</span>
           </label>
           <select id="field_attendance" name="entry.1312972387" class="form-control" required onchange="onAttendanceChanged()">
             <option value="" disabled selected>請選擇出席狀態</option>
@@ -1129,42 +1133,41 @@
 
         <!-- 參加午宴人數與相關需求連動區塊 -->
         <div id="attendee-details-container" style="display: none; animation: fadeInSlide 0.35s ease-out;">
-          <!-- 參加午宴人數 BANQUET GUESTS (entry.1567260636) -->
+          
+          <!-- 出席的「成人」人數 (entry.1567260636) -->
           <div class="form-group" id="group_guest_count">
             <label class="form-label" for="field_guests">
-              參加午宴人數 <span class="en">BANQUET GUESTS</span><span class="req">*</span>
+              出席的「成人」人數 <span class="en">ADULT GUESTS</span><span class="req">*</span>
             </label>
-            <select id="field_guests" name="entry.1567260636" class="form-control" required>
-              <option value="" disabled>請選擇參加人數</option>
-              <option value="1" selected>1 人</option>
-              <option value="2">2 人</option>
-              <option value="3">3 人</option>
-              <option value="4">4 人</option>
-              <option value="5">5 人</option>
+            <select id="field_guests" name="entry.1567260636" class="form-control">
+              <option value="0" style="display:none;">0 位</option>
+              <option value="1" selected>1 位成人</option>
+              <option value="2">2 位成人</option>
+              <option value="3">3 位成人</option>
+              <option value="4">4 位成人</option>
+              <option value="5">5 位成人</option>
             </select>
           </div>
 
           <!-- 用餐細節需求 -->
-          <div id="conditional-dining-block" style="display: block;">
-            <!-- 素食人數 VEGETARIAN GUESTS (entry.1259066676) -->
+          <div id="conditional-dining-block">
+            <!-- 出席的「兒童」人數 (entry.1259066676) -->
             <div class="form-group">
-              <label class="form-label" for="field_vegetarian">
-                其中素食人數 <span class="en">VEGETARIAN MEALS</span>
+              <label class="form-label" for="field_children">
+                出席的「兒童」人數 <span class="en">CHILDREN GUESTS</span>
               </label>
-              <select id="field_vegetarian" name="entry.1259066676" class="form-control">
-                <option value="0" selected>0 人（全葷食）</option>
-                <option value="1">1 人素食</option>
-                <option value="2">2 人素食</option>
-                <option value="3">3 人素食</option>
-                <option value="4">4 人素食</option>
-                <option value="5">5 人素食</option>
+              <select id="field_children" name="entry.1259066676" class="form-control">
+                <option value="0" selected>0 位兒童</option>
+                <option value="1">1 位兒童</option>
+                <option value="2">2 位兒童</option>
+                <option value="3">3 位兒童</option>
               </select>
             </div>
 
-            <!-- 兒童椅需求 HIGH CHAIR (entry.1887387302) -->
+            <!-- 是否需要兒童座椅？ (entry.1887387302) -->
             <div class="form-group">
               <label class="form-label" for="field_babychair">
-                兒童座椅需求 <span class="en">HIGH CHAIR</span>
+                是否需要兒童座椅？ <span class="en">HIGH CHAIR</span>
               </label>
               <select id="field_babychair" name="entry.1887387302" class="form-control">
                 <option value="NA" selected>不需要 (NA)</option>
@@ -1174,12 +1177,12 @@
               </select>
             </div>
 
-            <!-- 飲食禁忌與備註需求 DIETARY RESTRICTIONS (entry.1945371672) -->
+            <!-- 飲食禁忌或特殊需求 (entry.1945371672) -->
             <div class="form-group">
               <label class="form-label" for="field_dietary_notes">
-                飲食禁忌或特殊需求 <span class="en">DIETARY NOTES</span>
+                飲食禁忌或特殊需求 <span class="en">DIETARY RESTRICTIONS</span>
               </label>
-              <input type="text" id="field_dietary_notes" name="entry.1945371672" class="form-control" placeholder="例如：海鮮過敏、不吃牛（若無可填無）">
+              <input type="text" id="field_dietary_notes" name="entry.1945371672" class="form-control" placeholder="例如：素食、海鮮過敏、不吃牛（若無可填無）">
             </div>
           </div>
         </div>
@@ -1283,24 +1286,22 @@
       const attendance = document.getElementById('field_attendance').value;
       const attendeeContainer = document.getElementById('attendee-details-container');
       const guestsInput = document.getElementById('field_guests');
-      const vegetarianInput = document.getElementById('field_vegetarian');
+      const childrenInput = document.getElementById('field_children');
       const babychairInput = document.getElementById('field_babychair');
       const dietaryNotesInput = document.getElementById('field_dietary_notes');
 
       if (attendance === '心意相隨，祝福滿滿') {
         attendeeContainer.style.display = 'none';
-        guestsInput.required = false;
         guestsInput.value = '0';
-        if (vegetarianInput) vegetarianInput.value = '0';
+        if (childrenInput) childrenInput.value = '0';
         if (babychairInput) babychairInput.value = 'NA';
         if (dietaryNotesInput) dietaryNotesInput.value = '無';
       } else if (attendance === '我要參加！一起見證幸福時刻') {
         attendeeContainer.style.display = 'block';
-        guestsInput.required = true;
         if (!guestsInput.value || guestsInput.value === '0') {
           guestsInput.value = '1';
         }
-        if (vegetarianInput && !vegetarianInput.value) vegetarianInput.value = '0';
+        if (childrenInput && !childrenInput.value) childrenInput.value = '0';
         if (babychairInput && !babychairInput.value) babychairInput.value = 'NA';
         if (dietaryNotesInput && dietaryNotesInput.value === '無') dietaryNotesInput.value = '';
       }
