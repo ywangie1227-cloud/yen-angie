@@ -1046,7 +1046,8 @@
       <form id="weddingRsvpForm" 
             action="https://docs.google.com/forms/d/e/1FAIpQLSfQD8lgXXLjN0xpeaUqkVFqBBYOacNQD2n3cIqy8V_UchjhwA/formResponse" 
             method="POST" 
-            onsubmit="return handleFormSubmit(event);">
+            target="hidden_submission_frame"
+            onsubmit="return handleFormSubmit();">
 
         <!-- 姓名 NAME (entry.1886153940) -->
         <div class="form-group">
@@ -1108,7 +1109,7 @@
               出席的「成人」人數 <span class="en">ADULT GUESTS</span><span class="req">*</span>
             </label>
             <select id="field_guests" name="entry.1567260636" class="form-control">
-              <option value="0" style="display:none;">0</option>
+              <option value="" style="display:none;">請選擇</option>
               <option value="1" selected>1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -1260,18 +1261,26 @@
 
       if (attendance === '心意相隨，祝福滿滿') {
         attendeeContainer.style.display = 'none';
-        guestsInput.value = '0';
-        if (childrenInput) childrenInput.value = '0';
-        if (babychairInput) babychairInput.value = 'NA';
-        if (dietaryNotesInput) dietaryNotesInput.value = '無';
+        // 停用不參加時的餐點與人數欄位，避免送出 Google 表單不接受的空值或 0
+        guestsInput.disabled = true;
+        if (childrenInput) childrenInput.disabled = true;
+        if (babychairInput) babychairInput.disabled = true;
+        if (dietaryNotesInput) dietaryNotesInput.disabled = true;
       } else if (attendance === '我要參加！一起見證幸福時刻') {
         attendeeContainer.style.display = 'block';
-        if (!guestsInput.value || guestsInput.value === '0') {
-          guestsInput.value = '1';
+        guestsInput.disabled = false;
+        if (!guestsInput.value) guestsInput.value = '1';
+        if (childrenInput) {
+          childrenInput.disabled = false;
+          if (!childrenInput.value) childrenInput.value = '0';
         }
-        if (childrenInput && !childrenInput.value) childrenInput.value = '0';
-        if (babychairInput && !babychairInput.value) babychairInput.value = 'NA';
-        if (dietaryNotesInput && dietaryNotesInput.value === '無') dietaryNotesInput.value = '';
+        if (babychairInput) {
+          babychairInput.disabled = false;
+          if (!babychairInput.value) babychairInput.value = 'NA';
+        }
+        if (dietaryNotesInput) {
+          dietaryNotesInput.disabled = false;
+        }
       }
     }
 
@@ -1283,59 +1292,33 @@
       }
     });
 
-    /* 4. 單一精準 Google Form 送出邏輯（修復語法錯誤與防止重複提交） */
+    /* 4. 原生 Iframe 單次防重複提交邏輯 */
     let isSubmitting = false;
 
-    function handleFormSubmit(event) {
-      if (event) event.preventDefault();
-
-      // 若正在送出中，直接攔截避免重複發送
+    function handleFormSubmit() {
+      // 防止重複連點送出兩筆資料
       if (isSubmitting) {
         return false;
       }
 
-      const form = document.getElementById('weddingRsvpForm');
-      const btn = document.getElementById('btn_submit_text');
-      const attendance = document.getElementById('field_attendance').value;
-
       isSubmitting = true;
+      const btn = document.getElementById('btn_submit_text');
       btn.disabled = true;
       btn.textContent = '傳送中 SUBMITTING...';
 
-      // 整理要送出的欄位資料
-      const formData = new FormData(form);
-      const urlParams = new URLSearchParams();
+      // 允許表單透過原生 target="hidden_submission_frame" 正常 POST 送出（只會執行一次）
+      return true;
+    }
 
-      for (const [key, value] of formData.entries()) {
-        // 若選擇「心意相隨，祝福滿滿」，不傳送可能導致 Google 驗證失敗的餐點/人數選項
-        if (attendance === '心意相隨，祝福滿滿') {
-          if (key === 'entry.1567260636' || key === 'entry.1259066676' || key === 'entry.1887387302' || key === 'entry.1945371672') {
-            continue;
-          }
-        }
-        if (value !== '') {
-          urlParams.append(key, value);
-        }
+    function handleIframeLoaded() {
+      if (isSubmitting) {
+        showSuccessView();
       }
+    }
 
-      // 使用單次背景 Fetch 送出至 Google Form（保證只送出 1 次，且不跳轉頁面）
-      fetch(form.action, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: urlParams.toString()
-      })
-      .then(() => {
-        showSuccessView();
-      })
-      .catch((error) => {
-        console.error('Submission error:', error);
-        showSuccessView();
-      });
-
-      return false;
+    const submissionFrame = document.getElementById('hidden_submission_frame');
+    if (submissionFrame) {
+      submissionFrame.addEventListener('load', handleIframeLoaded);
     }
 
     function showSuccessView() {
@@ -1354,8 +1337,14 @@
       document.getElementById('btn_submit_text').disabled = false;
       document.getElementById('btn_submit_text').textContent = '確認送出 SUBMIT';
       document.getElementById('attendee-details-container').style.display = 'none';
-      isSubmitting = false;
       
+      // 恢復欄位啟用狀態
+      document.getElementById('field_guests').disabled = false;
+      if (document.getElementById('field_children')) document.getElementById('field_children').disabled = false;
+      if (document.getElementById('field_babychair')) document.getElementById('field_babychair').disabled = false;
+      if (document.getElementById('field_dietary_notes')) document.getElementById('field_dietary_notes').disabled = false;
+
+      isSubmitting = false;
       document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
     }
 
