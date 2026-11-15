@@ -11,8 +11,8 @@
   <meta property="og:url" content="https://ywangie1227-cloud.github.io/yen-angie/">
   <meta property="og:title" content="Yen &amp; Angie | Wedding Invitation">
   <meta property="og:description" content="在最好的時光裡相遇，在滿溢的愛中定下約定。誠摯邀請您見證我們的幸福時刻！">
-  <meta property="og:image" content="https://i.postimg.cc/qRJyp6cZ/wedding-logo-golf.jpg">
-  <meta property="og:image:secure_url" content="https://i.postimg.cc/qRJyp6cZ/wedding-logo-golf.jpg">
+  <meta property="og:image" content="https://ywangie1227-cloud.github.io/yen-angie/wedding-logo-golf.jpg">
+  <meta property="og:image:secure_url" content="https://ywangie1227-cloud.github.io/yen-angie/wedding-logo-golf.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -32,7 +32,7 @@
       --morandi-gold-light: #f7f2ec;
       --morandi-gold-tint: #faf6f1;
 
-      /* 柔和霧感鼠尾草綠 */
+      /* 柔和霧感鼠尾草綠（優雅副色） */
       --morandi-sage: #8da399;
       --morandi-sage-dark: #6e847a;
       --morandi-sage-bg: #f3f6f5;
@@ -41,12 +41,12 @@
       --bg-cream: #faf8f5;
       --bg-card: #ffffff;
 
-      /* 溫暖深咖啡棕文字 */
+      /* 溫暖深咖啡棕文字（降低黑色壓迫感，極具柔焦雜誌感） */
       --text-main: #443e39;
       --text-muted: #736c65;
       --text-light: #9d968f;
 
-      /* 輕透柔焦邊框與投影 */
+      /* 輕透柔焦邊框與半透明暖金漫射投影 */
       --border-accent: rgba(190, 155, 123, 0.38);
       --border-subtle: rgba(190, 155, 123, 0.2);
       --border-light: #ece6de;
@@ -77,6 +77,7 @@
       overflow-x: hidden;
     }
 
+    /* 手機版防斷行專用 class */
     .no-wrap {
       white-space: nowrap !important;
       display: inline-block;
@@ -142,7 +143,9 @@
       font-weight: 400;
     }
 
-    nav ul li a:hover,
+    nav ul li a:hover {
+      color: var(--morandi-gold);
+    }
     nav ul li a:hover .nav-sub {
       color: var(--morandi-gold);
     }
@@ -161,6 +164,7 @@
       padding: 0 1.5rem 2.8rem;
     }
 
+    /* 溫潤暖褐調薄暮光暈漸層遮罩 */
     .hero::before {
       content: '';
       position: absolute;
@@ -222,6 +226,7 @@
       margin: 0 auto;
     }
 
+    /* 倒數區頂部：婚禮日期標章（暖燕麥奶咖微光） */
     .countdown-date-badge {
       display: inline-flex;
       align-items: center;
@@ -285,6 +290,7 @@
       box-shadow: 0 14px 36px rgba(190, 155, 123, 0.22);
     }
 
+    /* 倒數數字採用溫潤暖燕麥奶咖色 */
     .countdown-num {
       font-size: 1.95rem;
       font-weight: 600;
@@ -351,6 +357,13 @@
       color: var(--text-muted);
       line-height: 2.05;
       letter-spacing: 0.04em;
+    }
+
+    .countdown-poem strong {
+      font-size: 1rem;
+      color: var(--morandi-gold-deep);
+      font-weight: 600;
+      letter-spacing: 0.05em;
     }
 
     section {
@@ -659,22 +672,18 @@
       font-family: 'Noto Serif TC', serif;
     }
 
-    select.form-control option {
-      background-color: #ffffff;
-      color: #443e39;
-      font-family: 'Noto Serif TC', sans-serif;
-      padding: 8px;
-    }
-
     #conditional-dining-block {
+      display: none;
       background: var(--morandi-gold-tint);
       border-left: 3px solid var(--morandi-gold);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       padding: 1.2rem 1.2rem 0.3rem 1.2rem;
       margin-top: 0.4rem;
       margin-bottom: 1.5rem;
+      animation: fadeInSlide 0.35s ease-out;
     }
 
+    /* 送出按鈕：絲緞般的雙色奶茶漸層與半透明柔光投影 */
     .btn-submit {
       width: 100%;
       background: linear-gradient(135deg, #be9b7b 0%, #98785e 100%);
@@ -774,6 +783,7 @@
       color: var(--text-light);
     }
 
+    /* 懸浮音樂播放器按鈕（莫蘭迪暖金微光） */
     .music-toggle-btn {
       position: fixed;
       bottom: 24px;
@@ -842,6 +852,7 @@
         height: 82vh;
         min-height: 480px;
         padding-bottom: 2.2rem;
+        background-position: center top;
       }
       .hero-title {
         font-size: 1.9rem;
@@ -919,7 +930,7 @@
     </ul>
   </nav>
 
-  <!-- 首頁全螢幕封面 -->
+  <!-- 首頁全螢幕封面 (使用指定的 195 婚紗照，底置文字不擋臉) -->
   <header class="hero" id="home">
     <div class="hero-container">
       <div class="hero-quote-en">Two are better than one</div>
@@ -933,6 +944,7 @@
     <div class="countdown-header-title">The Countdown</div>
     
     <div class="countdown-container">
+      <!-- Days Card -->
       <div class="countdown-card">
         <div class="countdown-num" id="timer-days">00</div>
         <div class="countdown-line-divider"></div>
@@ -941,6 +953,7 @@
         </div>
       </div>
 
+      <!-- Hours Card -->
       <div class="countdown-card">
         <div class="countdown-num" id="timer-hours">00</div>
         <div class="countdown-line-divider"></div>
@@ -949,6 +962,7 @@
         </div>
       </div>
 
+      <!-- Minutes Card -->
       <div class="countdown-card">
         <div class="countdown-num" id="timer-minutes">00</div>
         <div class="countdown-line-divider"></div>
@@ -957,6 +971,7 @@
         </div>
       </div>
 
+      <!-- Seconds Card -->
       <div class="countdown-card">
         <div class="countdown-num" id="timer-seconds">00</div>
         <div class="countdown-line-divider"></div>
@@ -988,6 +1003,7 @@
       <div class="detail-event-title">The Wedding Banquet</div>
       <div class="detail-event-en">2027.01.10 (SUN)</div>
 
+      <!-- 婚禮日期與時間 -->
       <div class="detail-date">12:00 準時開席</div>
       <div class="detail-time">
         <span class="no-wrap">時間：11:30 迎賓入席</span> | <span class="no-wrap">12:00 準時開席</span>
@@ -995,11 +1011,12 @@
 
       <div class="detail-divider"></div>
 
+      <!-- 飯店與廳房資訊 (3F在地址後方) -->
       <div class="detail-venue-name no-wrap">台北市大倉久和大飯店</div>
       <div class="detail-hall no-wrap">久和廳</div>
       <div class="detail-address no-wrap">台北市中山區南京東路一段9號 3F</div>
 
-      <!-- 交通指引摺疊面板 -->
+      <!-- 交通指引：隱藏摺疊面板 (Accordion) -->
       <div class="accordion">
         <button type="button" class="accordion-header" id="accordion-toggle-btn" onclick="toggleTransportation()">
           <span>交通指引<span class="acc-title-en">TRANSPORTATION</span></span>
@@ -1039,14 +1056,14 @@
       <h2>出席回函</h2>
     </div>
 
-    <!-- 隱藏式 Iframe 提交目標 -->
+    <!-- 隱藏式 Iframe 提交技術 -->
     <iframe name="hidden_submission_frame" id="hidden_submission_frame" style="display:none;"></iframe>
 
     <div class="rsvp-wrapper" id="rsvp-form-container">
       <form id="weddingRsvpForm" 
             action="https://docs.google.com/forms/d/e/1FAIpQLSfQD8lgXXLjN0xpeaUqkVFqBBYOacNQD2n3cIqy8V_UchjhwA/formResponse" 
             method="POST" 
-            target="hidden_submission_frame"
+            target="hidden_submission_frame" 
             onsubmit="return handleFormSubmit();">
 
         <!-- 姓名 NAME (entry.1886153940) -->
@@ -1068,9 +1085,9 @@
         <!-- 電子信箱 EMAIL (entry.1647990662) -->
         <div class="form-group">
           <label class="form-label" for="field_email">
-            電子信箱 / LINE ID <span class="en">EMAIL / LINE</span>
+            電子信箱 <span class="en">EMAIL</span>
           </label>
-          <input type="text" id="field_email" name="entry.1647990662" class="form-control" placeholder="example@domain.com 或 LINE ID">
+          <input type="email" id="field_email" name="entry.1647990662" class="form-control" placeholder="example@domain.com">
         </div>
 
         <!-- 與新人的關係 RELATIONSHIP (entry.2044940604) -->
@@ -1091,7 +1108,7 @@
         <!-- 出席意願 ATTENDANCE (entry.1312972387) -->
         <div class="form-group">
           <label class="form-label" for="field_attendance">
-            是否可以參加婚禮呢 <span class="en">ATTENDANCE</span><span class="req">*</span>
+            出席意願 <span class="en">ATTENDANCE</span><span class="req">*</span>
           </label>
           <select id="field_attendance" name="entry.1312972387" class="form-control" required onchange="onAttendanceChanged()">
             <option value="" disabled selected>請選擇出席狀態</option>
@@ -1100,78 +1117,63 @@
           </select>
         </div>
 
-        <!-- 參加午宴人數與相關需求連動區塊 -->
-        <div id="attendee-details-container" style="display: none; animation: fadeInSlide 0.35s ease-out;">
-          
-          <!-- 出席的「成人」人數 (entry.1567260636) -->
-          <div class="form-group" id="group_guest_count">
-            <label class="form-label" for="field_guests">
-              出席的「成人」人數 <span class="en">ADULT GUESTS</span><span class="req">*</span>
+        <!-- 參加午宴人數 BANQUET GUESTS (entry.1567260636) -->
+        <div class="form-group" id="group_guest_count">
+          <label class="form-label" for="field_guests">
+            參加午宴人數 <span class="en">BANQUET GUESTS</span><span class="req">*</span>
+          </label>
+          <select id="field_guests" name="entry.1567260636" class="form-control" onchange="evaluateDiningRequirementsVisibility()" required>
+            <option value="" disabled selected>請選擇參加人數</option>
+            <option value="0">0 人</option>
+            <option value="1">1 人</option>
+            <option value="2">2 人</option>
+            <option value="3">3 人</option>
+            <option value="4">4 人</option>
+            <option value="5">5 人</option>
+          </select>
+        </div>
+
+        <!-- 智能表單邏輯：人數 > 0 時才展示 -->
+        <div id="conditional-dining-block">
+          <!-- 飲食需求 DIETARY (entry.1945371672) -->
+          <div class="form-group">
+            <label class="form-label" for="field_dietary">
+              飲食需求 <span class="en">DIETARY PREFERENCE</span>
             </label>
-            <select id="field_guests" name="entry.1567260636" class="form-control">
-              <option value="" style="display:none;">請選擇</option>
-              <option value="1" selected>1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+            <select id="field_dietary" name="entry.1945371672" class="form-control">
+              <option value="葷食">葷食</option>
+              <option value="素食">素食</option>
             </select>
           </div>
 
-          <!-- 用餐與兒童需求 -->
-          <div id="conditional-dining-block">
-            <!-- 出席的「兒童」人數 (entry.1259066676) -->
-            <div class="form-group">
-              <label class="form-label" for="field_children">
-                出席的「兒童」人數 <span class="en">CHILDREN GUESTS</span>
-              </label>
-              <select id="field_children" name="entry.1259066676" class="form-control">
-                <option value="0" selected>0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
-
-            <!-- 是否需要兒童座椅？ (entry.1887387302) -->
-            <div class="form-group">
-              <label class="form-label" for="field_babychair">
-                是否需要兒童座椅？ <span class="en">HIGH CHAIR</span>
-              </label>
-              <select id="field_babychair" name="entry.1887387302" class="form-control">
-                <option value="NA" selected>不需要 (NA)</option>
-                <option value="需要 1 張">需要 1 張</option>
-                <option value="需要 2 張">需要 2 張</option>
-                <option value="需要 3 張">需要 3 張</option>
-              </select>
-            </div>
-
-            <!-- 飲食禁忌或特殊需求 (entry.1945371672) -->
-            <div class="form-group">
-              <label class="form-label" for="field_dietary_notes">
-                飲食禁忌或特殊需求 <span class="en">DIETARY RESTRICTIONS</span>
-              </label>
-              <input type="text" id="field_dietary_notes" name="entry.1945371672" class="form-control" placeholder="例如：素食、海鮮過敏、不吃牛（若無可填無）">
-            </div>
+          <!-- 兒童椅需求 HIGH CHAIR (entry.1887387302) -->
+          <div class="form-group">
+            <label class="form-label" for="field_babychair">
+              是否需要兒童椅 <span class="en">HIGH CHAIR</span>
+            </label>
+            <select id="field_babychair" name="entry.1887387302" class="form-control">
+              <option value="不需要">不需要</option>
+              <option value="需要">需要</option>
+            </select>
           </div>
         </div>
 
-        <!-- 喜帖郵寄地址 MAILING ADDRESS (entry.2093466386) -->
+        <!-- 給新人的祝福 BLESSING (entry.2093466386) -->
+        <div class="form-group">
+          <label class="form-label" for="field_message">
+            給新人的祝福 <span class="en">BLESSING</span>
+          </label>
+          <textarea id="field_message" name="entry.2093466386" class="form-control" rows="3" placeholder="給 Yen & Angie 的溫暖祝福..."></textarea>
+        </div>
+
+        <!-- 喜帖郵寄地址 MAILING ADDRESS (entry.845217517) -->
         <div class="form-group">
           <label class="form-label" for="field_address" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem;">
             <span>喜帖郵寄地址</span>
             <span class="en">MAILING ADDRESS</span>
             <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted); letter-spacing: 0.02em;">（若已收到紙本喜帖則無須填寫）</span>
           </label>
-          <input type="text" id="field_address" name="entry.2093466386" class="form-control" placeholder="請填寫郵遞區號與詳細收件地址">
-        </div>
-
-        <!-- 給新人的祝福 BLESSING (entry.845217517) -->
-        <div class="form-group">
-          <label class="form-label" for="field_message">
-            給新人的祝福 <span class="en">BLESSING</span>
-          </label>
-          <textarea id="field_message" name="entry.845217517" class="form-control" rows="3" placeholder="給 Yen & Angie 的溫暖祝福..."></textarea>
+          <input type="text" id="field_address" name="entry.845217517" class="form-control" placeholder="請填寫郵遞區號與詳細收件地址">
         </div>
 
         <button type="submit" class="btn-submit" id="btn_submit_text">確認送出 SUBMIT</button>
@@ -1195,7 +1197,7 @@
     <div class="footer-desc">© 2027 NICE TO MEET YOU MY SOULMATE. ALL RIGHTS RESERVED.</div>
   </footer>
 
-  <!-- 背景音樂播放器與懸浮按鈕 -->
+  <!-- 背景音樂播放器 (The Blessing) 與右下角懸浮按鈕 -->
   <audio id="weddingAudio" loop preload="auto">
     <source src="the-blessing.mp3" type="audio/mpeg">
   </audio>
@@ -1205,7 +1207,7 @@
   </button>
 
   <script>
-    /* 1. 倒數計時器邏輯 */
+    /* 1. 倒數計時器邏輯 (開席時間：2027-01-10 12:00) */
     const targetDate = new Date('2027-01-10T12:00:00+08:00').getTime();
 
     function renderCountdown() {
@@ -1234,7 +1236,7 @@
     setInterval(renderCountdown, 1000);
     renderCountdown();
 
-    /* 2. 交通指引摺疊面板 */
+    /* 2. 交通資訊摺疊式面板 (Accordion) */
     function toggleTransportation() {
       const panel = document.getElementById('accordion-panel');
       const arrow = document.getElementById('accordion-arrow');
@@ -1250,84 +1252,54 @@
       }
     }
 
-    /* 3. 智能表單展開與重設邏輯 */
-    function onAttendanceChanged() {
-      const attendance = document.getElementById('field_attendance').value;
-      const attendeeContainer = document.getElementById('attendee-details-container');
+    /* 3. 智能表單邏輯 */
+    function evaluateDiningRequirementsVisibility() {
       const guestsInput = document.getElementById('field_guests');
-      const childrenInput = document.getElementById('field_children');
-      const babychairInput = document.getElementById('field_babychair');
-      const dietaryNotesInput = document.getElementById('field_dietary_notes');
+      const conditionalBlock = document.getElementById('conditional-dining-block');
+      const guestsVal = parseInt(guestsInput.value, 10);
 
-      if (attendance === '心意相隨，祝福滿滿') {
-        attendeeContainer.style.display = 'none';
-        // 停用不參加時的餐點與人數欄位，避免送出 Google 表單不接受的空值或 0
-        guestsInput.disabled = true;
-        if (childrenInput) childrenInput.disabled = true;
-        if (babychairInput) babychairInput.disabled = true;
-        if (dietaryNotesInput) dietaryNotesInput.disabled = true;
-      } else if (attendance === '我要參加！一起見證幸福時刻') {
-        attendeeContainer.style.display = 'block';
-        guestsInput.disabled = false;
-        if (!guestsInput.value) guestsInput.value = '1';
-        if (childrenInput) {
-          childrenInput.disabled = false;
-          if (!childrenInput.value) childrenInput.value = '0';
-        }
-        if (babychairInput) {
-          babychairInput.disabled = false;
-          if (!babychairInput.value) babychairInput.value = 'NA';
-        }
-        if (dietaryNotesInput) {
-          dietaryNotesInput.disabled = false;
-        }
+      if (!isNaN(guestsVal) && guestsVal > 0) {
+        conditionalBlock.style.display = 'block';
+      } else {
+        conditionalBlock.style.display = 'none';
       }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const attendanceSelect = document.getElementById('field_attendance');
-      if (attendanceSelect) {
-        attendanceSelect.addEventListener('change', onAttendanceChanged);
-        attendanceSelect.addEventListener('input', onAttendanceChanged);
-      }
-    });
+    function onAttendanceChanged() {
+      const attendance = document.getElementById('field_attendance').value;
+      const guestsInput = document.getElementById('field_guests');
 
-    /* 4. 原生 Iframe 單次防重複提交邏輯 */
-    let isSubmitting = false;
+      if (attendance === '心意相隨，祝福滿滿') {
+        guestsInput.value = '0';
+      } else if (attendance === '我要參加！一起見證幸福時刻') {
+        if (!guestsInput.value || parseInt(guestsInput.value, 10) <= 0) {
+          guestsInput.value = '1';
+        }
+      }
+      evaluateDiningRequirementsVisibility();
+    }
+
+    /* 4. 隱藏式 Iframe 無跳轉提交 */
+    let formSubmitted = false;
 
     function handleFormSubmit() {
-      // 防止重複連點送出兩筆資料
-      if (isSubmitting) {
-        return false;
-      }
-
-      isSubmitting = true;
       const btn = document.getElementById('btn_submit_text');
       btn.disabled = true;
       btn.textContent = '傳送中 SUBMITTING...';
-
-      // 允許表單透過原生 target="hidden_submission_frame" 正常 POST 送出（只會執行一次）
+      formSubmitted = true;
       return true;
     }
 
     function handleIframeLoaded() {
-      if (isSubmitting) {
-        showSuccessView();
+      if (formSubmitted) {
+        document.getElementById('weddingRsvpForm').style.display = 'none';
+        document.getElementById('submission-success-card').style.display = 'block';
+        
+        document.getElementById('submission-success-card').scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
       }
-    }
-
-    const submissionFrame = document.getElementById('hidden_submission_frame');
-    if (submissionFrame) {
-      submissionFrame.addEventListener('load', handleIframeLoaded);
-    }
-
-    function showSuccessView() {
-      document.getElementById('weddingRsvpForm').style.display = 'none';
-      document.getElementById('submission-success-card').style.display = 'block';
-      document.getElementById('submission-success-card').scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'center' 
-      });
     }
 
     function resetFormView() {
@@ -1336,16 +1308,15 @@
       document.getElementById('submission-success-card').style.display = 'none';
       document.getElementById('btn_submit_text').disabled = false;
       document.getElementById('btn_submit_text').textContent = '確認送出 SUBMIT';
-      document.getElementById('attendee-details-container').style.display = 'none';
+      document.getElementById('conditional-dining-block').style.display = 'none';
+      formSubmitted = false;
       
-      // 恢復欄位啟用狀態
-      document.getElementById('field_guests').disabled = false;
-      if (document.getElementById('field_children')) document.getElementById('field_children').disabled = false;
-      if (document.getElementById('field_babychair')) document.getElementById('field_babychair').disabled = false;
-      if (document.getElementById('field_dietary_notes')) document.getElementById('field_dietary_notes').disabled = false;
-
-      isSubmitting = false;
       document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const submissionFrame = document.getElementById('hidden_submission_frame');
+    if (submissionFrame) {
+      submissionFrame.addEventListener('load', handleIframeLoaded);
     }
 
     /* 5. 背景音樂播放控制 */
@@ -1370,13 +1341,16 @@
       }
     }
 
+    /* 首次使用者互動時嘗試淡入播放 */
     function triggerAutoPlayOnce() {
       if (autoPlayTriggered || !weddingAudio) return;
       autoPlayTriggered = true;
       weddingAudio.play().then(() => {
         musicToggleBtn.classList.add('playing');
         musicIcon.textContent = '♪';
-      }).catch(() => {});
+      }).catch(() => {
+        /* 若瀏覽器政策阻擋，保留使用者手動點擊按鈕啟動 */
+      });
       document.removeEventListener('click', triggerAutoPlayOnce);
       document.removeEventListener('touchstart', triggerAutoPlayOnce);
     }
